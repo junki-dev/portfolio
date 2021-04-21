@@ -1,0 +1,56 @@
+* {
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family:'Rajdhani';
+	box-sizing:border-box;
+}
+
+a {
+	text-decoration:none;
+	outline:none;
+	color:#000
+}
+
+header {
+	height:150px;
+	width:100vw;
+	margin:0 auto;
+}
+
+.container {
+	width:100%;
+	height:100px;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:space-between;
+}
+
+.container > h2 {
+	margin-left:20px;
+}
+
+.container > nav {
+	width:600px;
+	height:100%;
+}
+
+.container ul {
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content:space-between;
+}
+
+.container ul > li {
+	font-size:20px;
+	height:100%;
+	display:flex;
+	align-items:center;
+}
+
+.contour {
+	width:100%;
+	align-items:center;
+}
