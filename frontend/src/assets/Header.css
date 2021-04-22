@@ -12,6 +12,10 @@
   width: 50%;
 }
 
+.header-profile-name {
+  margin: auto 0;
+}
+
 .header-profile-img {
   width: 50px;
 }
