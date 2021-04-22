@@ -7,6 +7,15 @@
   justify-content: space-between;
 }
 
+.profile {
+  display: flex;
+  width: 50%;
+}
+
+.profile-img {
+  width: 50px;
+}
+
 .header nav {
   width: 50%;
 }

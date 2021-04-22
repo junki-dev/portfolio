@@ -1,10 +1,14 @@
 import React from 'react';
 import '../assets/Header.css';
+import profile from '../images/profile.jpeg';
 
 const Header = () => {
   return (
     <div className="header">
-      <h2>Kimjunki</h2>
+      <div className="profile">
+        <h2>Kimjunki</h2>
+        <img className="profile-img" src={profile} alt="Profile" />
+      </div>
       <nav>
         <ul>
           <li>
