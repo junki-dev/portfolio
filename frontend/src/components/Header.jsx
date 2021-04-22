@@ -5,15 +5,15 @@ import profile from '../images/profile.jpeg';
 const Header = () => {
   return (
     <div className="header">
-      <div className="profile">
+      <div className="header-profile">
         <h2>Kimjunki</h2>
-        <img className="profile-img" src={profile} alt="Profile" />
+        <img className="header-profile-img" src={profile} alt="Profile" />
       </div>
       <nav>
         <ul>
           <li>
             <a href="/#" className="test">
-              Introduce
+              Profile
             </a>
           </li>
           <li>
