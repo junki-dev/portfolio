@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@font-face {
+  font-family: 'Jua';
+  src: url('../font/Jua-Regular.ttf');
+}
+@font-face {
+  font-family: 'Gothic';
+  src: url('../font/NanumGothic-Bold.ttf');
+}
+@font-face {
+  font-family: 'NoteSans';
+  src: url('../font/NotoSansKR-Medium.otf');
+}
