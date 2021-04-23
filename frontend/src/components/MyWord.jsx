@@ -67,4 +67,8 @@ export default [
     text: 'Crawling',
     value: 100,
   },
+  {
+    text: 'Linux',
+    value: 100,
+  },
 ];
