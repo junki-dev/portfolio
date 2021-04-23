@@ -13,7 +13,7 @@ const Header = () => {
         <ul>
           <li>
             <a href="/#" className="test">
-              Profile
+              Career
             </a>
           </li>
           <li>
