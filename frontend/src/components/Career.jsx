@@ -1,11 +1,11 @@
 import React from 'react';
 
-import '../assets/Profile.css';
+import '../assets/Career.css';
 import career from './MyCareer';
 
-const Profile = () => {
+const Career = () => {
   return (
-    <div className="career">
+    <div className="career-section">
       <p className="career-title">Career</p>
       <hr className="career-hr" />
       <table className="career-content">
@@ -32,4 +32,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Career;

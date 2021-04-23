@@ -3,11 +3,14 @@ import React, { useState } from 'react';
 import ReactWordcloud from 'react-wordcloud';
 import { selection } from 'd3-selection';
 import 'd3-transition';
-import ReactModal from 'react-modal';
+// import PropTypes from 'prop-types';
 
 import Words from './MyWord';
+import Modal from './Modal';
 
-const size = [300, 100];
+import '../assets/WordCloud.css';
+
+// const size = [50, 400];
 const options = {
   rotations: 2,
   rotationAngles: [-90, 0],
@@ -17,15 +20,21 @@ const options = {
 const MyWordCloud = () => {
   // Modal 창 활성화 여부
   const [showModal, setShowModal] = useState(false);
+  const [nowWord, setNowWord] = useState('');
 
-  // // Modal 창 활성화
-  // const handleOpenModal = () => {
-  //   setShowModal(true);
-  // };
+  // Modal 창 활성화
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
 
   // Modal 창 비활성화
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+  const handleNowWord = word => {
+    console.log(word);
+    setNowWord(word);
   };
 
   function getCallback(callback) {
@@ -36,7 +45,9 @@ const MyWordCloud = () => {
       text
         .on('click', () => {
           if (isActive) {
-            setShowModal(true);
+            handleNowWord(word.text);
+            handleOpenModal();
+            // setNowWord(word.text);
           }
         })
         .transition()
@@ -55,21 +66,24 @@ const MyWordCloud = () => {
   };
 
   return (
-    <div className="container">
-      <ReactWordcloud
-        className="wordcloud"
-        callbacks={callbacks}
-        words={Words}
-        size={size}
-        options={options}
-      />
-      <h1>{showModal}</h1>
-      <h1>{setShowModal}</h1>
-      <ReactModal isOpen={showModal} contentLabel="Minimal Modal Example">
-        <button type="button" onClick={handleCloseModal}>
-          Close Modal
-        </button>
-      </ReactModal>
+    <div className="skills-section">
+      <p className="skills-title">Skills</p>
+      <hr className="skills-hr" />
+      <div className="skills-box">
+        <ReactWordcloud
+          className="skills-box"
+          callbacks={callbacks}
+          words={Words}
+          options={options}
+        />
+      </div>
+      {showModal && (
+        <Modal
+          show={showModal}
+          word={nowWord}
+          handleCloseModal={handleCloseModal}
+        />
+      )}
     </div>
   );
 };
