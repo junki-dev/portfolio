@@ -5,7 +5,7 @@ import career from './MyCareer';
 
 const Career = () => {
   return (
-    <div className="career-section">
+    <div className="career-section" id="career">
       <p className="career-title">Career</p>
       <hr className="career-hr" />
       <table className="career-content">
