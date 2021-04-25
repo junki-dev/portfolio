@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import SliderTrain from './SliderTrain';
+
 import '../assets/Experience.css';
 
 const Experience = () => {
@@ -36,9 +38,7 @@ const Experience = () => {
           placeholder="내용"
         />
       </div>
-      <div>
-        <h1>{name}</h1>
-      </div>
+      <SliderTrain />
     </div>
   );
 };
