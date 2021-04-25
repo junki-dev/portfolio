@@ -38,6 +38,11 @@ const Experience = () => {
           placeholder="내용"
         />
       </div>
+      <div className="arrow">
+        <span />
+        <span />
+        <span />
+      </div>
       <SliderTrain />
     </div>
   );
