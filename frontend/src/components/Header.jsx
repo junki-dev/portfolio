@@ -12,18 +12,18 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <a href="/#" className="test">
+            <a href="#career" className="test">
               Career
             </a>
           </li>
           <li>
-            <a href="/#">Skils</a>
+            <a href="#skills">Skills</a>
           </li>
           <li>
-            <a href="/#">Experience</a>
+            <a href="#experience">Experience</a>
           </li>
           <li>
-            <a href="/#">Contact Me</a>
+            <a href="#contact">Contact Me</a>
           </li>
         </ul>
       </nav>

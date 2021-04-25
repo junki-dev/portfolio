@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import TypingEffect from '../components/TypingEffect';
-import Home from '../components/Home';
+import Home from './Home';
 
 const Portfolio = () => {
   // Home화면 진입 전, Typing 효과 적용을 위한 State 값 설정

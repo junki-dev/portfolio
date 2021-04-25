@@ -1,0 +1,22 @@
+.contact-section {
+  margin-top: 50px;
+}
+
+.contact-title {
+  margin: 0;
+  width: 15%;
+  text-align: center;
+  font-size: larger;
+  font-family: 'Gothic';
+}
+
+.contact-hr {
+  width: 15%;
+  margin-top: 10px;
+  margin-left: 0px;
+  background-color: #ffb53c;
+}
+
+.contact-content {
+  width: 100%;
+}

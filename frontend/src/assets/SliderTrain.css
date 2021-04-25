@@ -1,0 +1,25 @@
+.slider-section {
+  margin-top: 3%;
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.tunnel {
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 10px;
+  width: 2%;
+  height: 50px;
+}
+
+.slider {
+  width: 96%;
+  height: 50px;
+  background: #fff;
+}
+
+.slider-box {
+  height: 100%;
+  text-align: center;
+}
