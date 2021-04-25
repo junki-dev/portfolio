@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Career from '../components/Career';
 import WordCloud from '../components/WordCloud';
 import Experience from '../components/Experience';
+import Contact from '../components/Contact';
 
 import '../assets/Home.css';
 
@@ -14,6 +15,7 @@ const Home = () => {
       <Career />
       <WordCloud />
       <Experience />
+      <Contact />
     </div>
   );
 };
