@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Header from './Header';
-import Career from './Career';
-import WordCloud from './WordCloud';
-import Experience from './Experience';
+import Header from '../components/Header';
+import Career from '../components/Career';
+import WordCloud from '../components/WordCloud';
+import Experience from '../components/Experience';
 
 import '../assets/Home.css';
 
