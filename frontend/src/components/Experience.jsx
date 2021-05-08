@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import SliderTrain from './SliderTrain';
+import GuestBook from './GuestBook';
 
 import '../assets/Experience.css';
 
@@ -38,7 +38,12 @@ const Experience = () => {
           placeholder="내용"
         />
       </div>
-      <SliderTrain />
+      <div className="arrow">
+        <span />
+        <span />
+        <span />
+      </div>
+      <GuestBook />
     </div>
   );
 };
