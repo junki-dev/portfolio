@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import SliderTrain from './SliderTrain';
+import GuestBook from './GuestBook';
 
 import '../assets/Experience.css';
 
@@ -43,7 +43,7 @@ const Experience = () => {
         <span />
         <span />
       </div>
-      <SliderTrain />
+      <GuestBook />
     </div>
   );
 };
