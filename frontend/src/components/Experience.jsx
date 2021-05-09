@@ -37,6 +37,7 @@ const Experience = () => {
           cols="15"
           placeholder="내용"
         />
+        <input type="submit" value="저장" />
       </div>
       <div className="arrow">
         <span />
