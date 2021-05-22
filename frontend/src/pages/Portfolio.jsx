@@ -12,7 +12,7 @@ const Portfolio = () => {
     setTimeout(() => {
       setTypingEffect(false);
       setHomEffect(true);
-    }, 11000);
+    }, 1000);
   }, []);
 
   return (
