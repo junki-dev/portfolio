@@ -1,34 +1,49 @@
 import React from 'react';
+
+import {
+  ProSidebar,
+  Menu,
+  MenuItem,
+  SidebarHeader,
+  SidebarFooter,
+  SidebarContent,
+} from 'react-pro-sidebar';
+
+import { FaList, FaRegHeart } from 'react-icons/fa';
+import { FiLogOut } from 'react-icons/fi';
+import { RiPencilLine } from 'react-icons/ri';
+import { BiCog } from 'react-icons/bi';
+
+import 'react-pro-sidebar/dist/css/styles.css';
 import '../assets/Header.css';
-import profile from '../images/profile.jpeg';
 
 const Header = () => {
   return (
-    <div className="header">
-      <div className="header-profile">
-        <h2 className="header-profile-name">Kimjunki</h2>
-        <img className="header-profile-img" src={profile} alt="Profile" />
+    <>
+      <div id="header">
+        {/* collapsed props to change menu size using menucollapse state */}
+        <ProSidebar>
+          <SidebarHeader>
+            <div className="logotext">
+              <p>Logo</p>
+            </div>
+          </SidebarHeader>
+          <SidebarContent>
+            <Menu iconShape="square">
+              <MenuItem icon={<FaList />}>CAREER</MenuItem>
+              <MenuItem icon={<FaRegHeart />}>SKILLS</MenuItem>
+              <MenuItem icon={<RiPencilLine />}>LAB</MenuItem>
+              <MenuItem icon={<BiCog />}>ABOUT</MenuItem>
+            </Menu>
+          </SidebarContent>
+          <SidebarFooter>
+            <Menu iconShape="square">
+              <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+            </Menu>
+          </SidebarFooter>
+        </ProSidebar>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <a href="#career" className="test">
-              Career
-            </a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#experience">Experience</a>
-          </li>
-          <li>
-            <a href="#contact">Contact Me</a>
-          </li>
-        </ul>
-      </nav>
-      <hr className="contour" />
-    </div>
+    </>
   );
 };
 
