@@ -1,20 +1,25 @@
-require('dotenv').config()
-const express = require('express')
-const mongoose = require('mongoose')
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-const app = express()
+const { PORT, MONGO_URI } = process.env;
 
-const { PORT, MONGO_URI } = process.env
+const app = express();
 
-app.use(express.static('public'))
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+app.use(cors());
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// CONNECT TO MONGODB SERVER
+// MongoDB 연결
 mongoose
   .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Successfully connected to mongodb'))
-  .catch(e => console.error(e))
+  .catch(e => console.error(e));
 
-app.get('/', (req, res) => res.send('test!'))
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
+// 라우팅
+app.use('/career', require('./router/career'));
+
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
