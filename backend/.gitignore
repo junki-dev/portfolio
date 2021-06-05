@@ -1,0 +1,5 @@
+# 패키지 파일 
+node_modules
+
+# 로그 파일
+log
