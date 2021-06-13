@@ -1,0 +1,38 @@
+.pro-sidebar {
+  width: 7%;
+  height: 100vh;
+  color: #000;
+  margin-left: 0px;
+  min-width: 3%;
+}
+.pro-sidebar .pro-sidebar-inner {
+  width: 100%;
+  background-color: #fff;
+}
+.pro-sidebar-header {
+  line-height: 30vh;
+  height: 30vh;
+  text-align: center;
+}
+.pro-sidebar-header p {
+  display: inline-block;
+  line-height: 1.5;
+}
+.pro-sidebar-content {
+  line-height: 50vh;
+  height: 50vh;
+  text-align: center;
+}
+.pro-sidebar-footer {
+  height: 20vh;
+}
+.pro-sidebar-footer img {
+  margin-top: 3vh;
+  width: 100%;
+}
+.resume-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
