@@ -6,3 +6,6 @@
 
 # yarn log file
 *.log
+
+* macbook file
+*.DS_Store
