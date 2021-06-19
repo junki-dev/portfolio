@@ -4,7 +4,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
-    "react/destructuring-assignment": 'off',
-    "no-param-reassign": 0,
+    'react/destructuring-assignment': 'off',
+    'no-param-reassign': 0,
   },
 };
