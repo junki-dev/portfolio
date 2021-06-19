@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TypeWriterEffect from 'typewriter-effect';
+import { Redirect } from 'react-router-dom';
 
 import '../assets/TypingEffect.css';
 
 const TypingEffect = () => {
+  const [redirect, setRedirect] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setRedirect(true);
+    }, 3000);
+  }, []);
+
   return (
     <div className="wrapper">
       <div className="content">
@@ -25,6 +34,7 @@ const TypingEffect = () => {
                 .start();
             }}
           />
+          {redirect && <Redirect to="/about" />}
         </div>
       </div>
     </div>
