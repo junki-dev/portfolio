@@ -6,7 +6,13 @@
 }
 .sidebar-menu .pro-sidebar-inner {
   width: 100%;
-  background-color: #eee;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
+.sidebar-menu .prefix-wrapper {
+  font-size: 2em;
+  font-family: BigShouldersRegular;
 }
 
 .pro-inner-item {
@@ -16,5 +22,7 @@
 
 .pro-inner-item .pro-item-content {
   width: 100%;
-  font-size: 2em;
+  height: 100%;
+  font-size: 8em;
+  font-family: BigShouldersBold;
 }
