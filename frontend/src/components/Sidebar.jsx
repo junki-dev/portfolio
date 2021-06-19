@@ -110,7 +110,11 @@ const Sidebar = () => {
         </ResumeContainer>
       </SidebarContent>
       <SidebarFooter>
-        <a href="https://github.com/junki-dev">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/junki-dev"
+        >
           <img src={githubLogo} alt="junki github" />
         </a>
       </SidebarFooter>
