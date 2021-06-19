@@ -23,3 +23,13 @@ code {
   font-family: 'NoteSans';
   src: url('../font/NotoSansKR-Medium.otf');
 }
+
+@font-face {
+  font-family: 'BigShouldersBold';
+  src: url('../font/BigShouldersStencilDisplay-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'BigShouldersRegular';
+  src: url('../font/BigShouldersStencilDisplay-Regular.ttf');
+}
