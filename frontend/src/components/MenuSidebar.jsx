@@ -12,13 +12,13 @@ const MenuSidebar = () => {
           <Link to="/about">ABOUT</Link>
         </MenuItem>
         <MenuItem prefix="02." className="menu-item">
-          WORK
+          <Link to="/work">WORK</Link>
         </MenuItem>
         <MenuItem prefix="03." className="menu-item">
-          SKILL
+          <Link to="/skill">SKILL</Link>
         </MenuItem>
         <MenuItem prefix="04." className="menu-item">
-          LAB
+          <Link to="/lab">LAB</Link>
         </MenuItem>
       </Menu>
     </ProSidebar>
