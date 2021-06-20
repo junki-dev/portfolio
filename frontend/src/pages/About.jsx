@@ -2,7 +2,6 @@ import React from 'react';
 // import axios from 'axios';
 
 import Sidebar from '../components/Sidebar';
-import MenuSidebar from '../components/MenuSidebar';
 
 // import Career from '../components/Career';
 // import WordCloud from '../components/WordCloud';
@@ -36,7 +35,7 @@ const About = () => {
       <input type="submit" onClick={fetchUserName} value="get" />
       <p>--------------------------</p> */}
       <Sidebar />
-      <MenuSidebar />
+      <span>about 페이지입니다.</span>
       {/* <Career />
       <WordCloud />
       <Experience />
