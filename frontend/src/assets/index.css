@@ -13,23 +13,28 @@ code {
 }
 @font-face {
   font-family: 'Jua';
-  src: url('../font/Jua-Regular.ttf');
+  src: url('../assets/font/Jua-Regular.ttf');
 }
 @font-face {
   font-family: 'Gothic';
-  src: url('../font/NanumGothic-Bold.ttf');
+  src: url('../assets/font/NanumGothic-Bold.ttf');
 }
 @font-face {
   font-family: 'NoteSans';
-  src: url('../font/NotoSansKR-Medium.otf');
+  src: url('../assets/font/NotoSansKR-Medium.otf');
 }
 
 @font-face {
   font-family: 'BigShouldersBold';
-  src: url('../font/BigShouldersStencilDisplay-SemiBold.ttf');
+  src: url('../assets/font/BigShouldersStencilDisplay-SemiBold.ttf');
 }
 
 @font-face {
   font-family: 'BigShouldersRegular';
-  src: url('../font/BigShouldersStencilDisplay-Regular.ttf');
+  src: url('../assets/font/BigShouldersStencilDisplay-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'SansBold';
+  src: url('../assets/font/OpenSansCondensed-Bold.ttf');
 }
