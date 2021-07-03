@@ -11,19 +11,19 @@ const HeaderContainer = styled.div`
 `;
 
 const Title = styled.span`
-  letter-spacing: 0px
-  font-size: 6vw;
-  font-family: SansBold;
+  letter-spacing: 0em;
+  font-size: 5vw;
+  font-family: EconomicBold;
 `;
 
 const SubTitle = styled.span`
   font-size: 2vw;
-  font-family: BigShouldersBold;
+  font-family: EconomicRegular;
 `;
 
 const SubContent = styled.span`
   font-size: 1vw;
-  font-family: RobotoRegular;
+  font-family: EconomicBold;
 `;
 
 const BodyHeader = ({ title, subTitle, subContnet }) => {

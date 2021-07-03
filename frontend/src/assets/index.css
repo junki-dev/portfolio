@@ -11,14 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@font-face {
-  font-family: 'Jua';
-  src: url('../assets/font/Jua-Regular.ttf');
-}
+
 @font-face {
   font-family: 'Gothic';
   src: url('../assets/font/NanumGothic-Bold.ttf');
 }
+
 @font-face {
   font-family: 'NoteSans';
   src: url('../assets/font/NotoSansKR-Medium.otf');
@@ -35,6 +33,11 @@ code {
 }
 
 @font-face {
-  font-family: 'SansBold';
-  src: url('../assets/font/OpenSansCondensed-Bold.ttf');
+  font-family: 'EconomicRegular';
+  src: url('../assets/font/Economica-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'EconomicBold';
+  src: url('../assets/font/Economica-Bold.ttf');
 }
