@@ -7,6 +7,8 @@ import Work from './Work';
 import Skill from './Skill';
 import Lab from './Lab';
 
+import '../assets/Home.css';
+
 const Portfolio = () => {
   return (
     <div>
