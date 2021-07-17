@@ -17,7 +17,7 @@ const options = {
   fontSizes: [50, 50],
 };
 
-const MyWordCloud = () => {
+const MyWordCloudD3 = () => {
   // Modal 창 활성화 여부
   const [showModal, setShowModal] = useState(false);
   const [nowWord, setNowWord] = useState('');
@@ -88,4 +88,4 @@ const MyWordCloud = () => {
   );
 };
 
-export default MyWordCloud;
+export default MyWordCloudD3;
