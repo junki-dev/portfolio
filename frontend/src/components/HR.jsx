@@ -6,6 +6,7 @@ const HR = () => {
     height: 1px;
     background-color: #eee;
     border: none;
+    margin-botton: 1px;
   `;
 
   return <Hr />;
