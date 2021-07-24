@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Menu/Sidebar';
 
 const Skill = () => {
   return (

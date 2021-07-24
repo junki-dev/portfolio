@@ -2,16 +2,11 @@ import React from 'react';
 // import axios from 'axios';
 import styled from 'styled-components';
 
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../components/Menu/Sidebar';
 import BodyHeader from '../components/Header/BodyHeader';
 import HR from '../components/HR';
 import Info from '../components/Info/Info';
 import ExperienceContent from '../components/About/ExperienceContent';
-import WordCloud from '../components/About/WordCloud';
-// import Career from '../components/Career';
-// import WordCloud from '../components/WordCloud';
-// import Experience from '../components/Experience';
-// import Contact from '../components/Contact';
 
 // body 영역 style
 const Body = styled.div`
@@ -106,15 +101,10 @@ const About = () => {
           <ExperienceContent
             title="Web Programming"
             subTitle="programmer(front-end / back-end)"
-            content="1년간 React.js, Node.js, Spring, Oracle, MSSql 등을 사용한 서비스 구축"
+            content="1년간 React.js, Node.js, Spring, Oracle, MSSql 등을 사용한 웹 서비스 구축"
           />
         </Experience>
-        <WordCloud />
       </Body>
-      {/* <Career />
-      <WordCloud />
-      <Experience />
-      <Contact /> */}
     </div>
   );
 };

@@ -16,12 +16,17 @@ const WordCloud = () => {
   // const test = tag => {
   //   console.log(tag);
   // };
+  const options = {
+    luminosity: 'dark',
+    format: 'rgba', // e.g. 'rgba(9, 1, 107, 0.6482447960879654)'
+  };
 
   return (
     <>
       <TagCloud
         minSize={12}
         maxSize={35}
+        colorOptions={options}
         tags={data}
         // onClick={tag => {
         //   test(tag);

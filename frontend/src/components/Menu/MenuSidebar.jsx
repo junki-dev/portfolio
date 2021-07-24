@@ -1,19 +1,10 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-import '../assets/MenuSidebar.css';
+import '../../assets/MenuSidebar.css';
 import { Link } from 'react-router-dom';
 
 const MenuSidebar = () => {
-  // const [selected, setSelected] = useState(1);
-
-  // const handleSelected = item => {
-  //   setSelected(item);
-  //   // eslint-disable-next-line no-console
-  //   console.log(selected);
-  //   console.log(`들어옴`)
-  // };
-
   return (
     <ProSidebar className="sidebar-menu">
       <Menu>

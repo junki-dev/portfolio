@@ -6,6 +6,7 @@
 }
 .sidebar-menu .pro-sidebar-inner {
   width: 100%;
+  padding-top: 4vh;
   background-color: #fff;
   border: 1px solid #eee;
 }
@@ -17,7 +18,7 @@
 
 .pro-inner-item {
   width: 100%;
-  height: 25vh;
+  height: 23vh;
 }
 
 .pro-inner-item .pro-item-content {
