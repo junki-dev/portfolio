@@ -17,6 +17,7 @@ const Portfolio = () => {
           <Route path="/" exact render={() => <TypingEffect />} />
           <Route path="/about" exact render={() => <About />} />
           <Route path="/work" exact render={() => <Work />} />
+          <Route path="/work/nh-p2p" exact render={() => <Work />} />
           <Route path="/skill" exact render={() => <Skill />} />
           <Route path="/lab" exact render={() => <Lab />} />
         </Switch>
