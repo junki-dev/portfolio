@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const HeaderContainer = styled.div`
   width: 100%;
-  height: 15%;
+  height: 10%;
   align-items: center;
   display: flex;
   justify-content: space-between;
