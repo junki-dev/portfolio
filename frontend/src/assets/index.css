@@ -41,3 +41,8 @@ code {
   font-family: 'EconomicBold';
   src: url('../assets/font/Economica-Bold.ttf');
 }
+
+@font-face {
+  font-family: 'SangSang';
+  src: url('../assets/font/locus_sangsang.otf');
+}
