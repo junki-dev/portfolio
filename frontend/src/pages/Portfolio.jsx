@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TypingEffect from '../components/TypingEffect';
 import About from './About';
 import Work from './Work';
+import WorkDetail from './WorkDetail/DetailTemplate';
 import Skill from './Skill';
 import Lab from './Lab';
 
@@ -17,11 +18,7 @@ const Portfolio = () => {
           <Route path="/" exact render={() => <TypingEffect />} />
           <Route path="/about" exact render={() => <About />} />
           <Route path="/work" exact render={() => <Work />} />
-          <Route path="/work/unicef-renew" exact render={() => <Work />} />
-          <Route path="/work/hauto-bc" exact render={() => <Work />} />
-          <Route path="/work/hcard-bc-sm" exact render={() => <Work />} />
-          <Route path="/work/hcard-bc" exact render={() => <Work />} />
-          <Route path="/work/nh-p2p" exact render={() => <Work />} />
+          <Route path="/work/:project" exact render={() => <WorkDetail />} />
           <Route path="/skill" exact render={() => <Skill />} />
           <Route path="/lab" exact render={() => <Lab />} />
         </Switch>
