@@ -11,9 +11,10 @@ const HeaderContainer = styled.div`
 `;
 
 const Title = styled.span`
-  letter-spacing: 0em;
-  font-size: 5vw;
-  font-family: EconomicBold;
+  display: inline-block;
+  font-size: 3vw;
+  letter-spacing: -1px;
+  font-family: Cafe24SurroundAir;
 `;
 
 const SubTitle = styled.span`

@@ -20,17 +20,20 @@ const MenuContainer = styled(Menu)`
   .pro-item-content {
     height: 100%;
     font-size: 3em;
-    font-family: SangSang;
+    font-family: Cafe24SurroundAir;
+    letter-spacing: -1px;
   }
 
   .prefix-wrapper {
-    font-size: 1.5em;
-    font-family: BigShouldersRegular;
+    font-size: 1em;
+    font-family: Cafe24SurroundAir;
+    letter-spacing: -1px;
   }
 
   .suffix-wrapper {
-    font-size: 1.5em;
-    font-family: BigShouldersRegular;
+    font-size: 1em;
+    font-family: Cafe24SurroundAir;
+    letter-spacing: -1px;
     margin-left: 0px;
   }
 `;

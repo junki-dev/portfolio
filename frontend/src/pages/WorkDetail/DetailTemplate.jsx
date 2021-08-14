@@ -1,7 +1,7 @@
 import React from 'react';
 // import axios from 'axios';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import Sidebar from '../../components/Menu/Sidebar';
 import BodyHeader from '../../components/Header/BodyHeader';
 import HR from '../../components/HR';
@@ -27,9 +27,9 @@ const Introduction = styled.div`
 
 // 소개 제목 style
 const Title = styled.span`
-  letter-spacing: 0em;
+  letter-spacing: -1px;
   font-size: 1.5vw;
-  font-family: EconomicBold;
+  font-family: SangSang;
 `;
 
 // 소개 내용 style
@@ -43,9 +43,17 @@ const Experience = styled.div`
   margin-top: 10%;
 `;
 
+const data = {
+  name: `현대오토에버 블록체인 네트워크 구축`,
+  startDate: `2021.04`,
+  endDate: `2021.08`,
+  work: `back-end | front-end, api 개발 및 화면 개발`,
+  description: `설명을 적겠습니다.`,
+};
+
 const About = () => {
-  const { project } = useParams();
-  console.log(project);
+  // const { project } = useParams();
+  // console.log(project);
   /** axois 예제 */
   // const [userName, setUserName] = useState();
 
@@ -71,15 +79,11 @@ const About = () => {
       <p>--------------------------</p> */}
       <Sidebar />
       <Body>
-        <BodyHeader
-          title="I AM KIM JUNKI"
-          subTitle="Blockchain Developer"
-          subContnet="Also Web, Backend, Frontend, Infro..."
-        />
+        <BodyHeader title={data.name} />
         <HR />
         <InfoContainer>
-          <Info title="When" content="Starting in 2018.10.01" />
-          <Info title="What" content="Infra / Backend" />
+          <Info title="When" content={`${data.startDate} - ${data.endDate}`} />
+          <Info title="What" content={data.work} />
         </InfoContainer>
         <Introduction>
           <Title>Introduce</Title>
