@@ -31,7 +31,7 @@ const SubContent = styled.span`
   font-family: EconomicRegular;
 `;
 
-const ExperienceContent = ({ title, subTitle, content }) => {
+const BasicContent = ({ title, subTitle, content }) => {
   return (
     <>
       <Container>
@@ -47,10 +47,10 @@ const ExperienceContent = ({ title, subTitle, content }) => {
   );
 };
 
-ExperienceContent.propTypes = {
+BasicContent.propTypes = {
   title: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
 };
 
-export default ExperienceContent;
+export default BasicContent;

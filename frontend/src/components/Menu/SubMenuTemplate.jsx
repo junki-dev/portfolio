@@ -3,6 +3,7 @@ import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import HR from '../HR';
 
 const Container = styled(ProSidebar)`
@@ -38,38 +39,26 @@ const MenuContainer = styled(Menu)`
   }
 `;
 
-const SubMenu = () => {
+const SubMenu = ({ menuList }) => {
   return (
     <Container>
       <MenuContainer>
-        <MenuItem prefix="01." suffix="2021">
-          유니세프 홈페이지 리뉴얼
-          <Link to="/work/unicef-renew" />
-        </MenuItem>
-        <HR />
-        <MenuItem prefix="02." suffix="2021">
-          현대오토에버 블록체인 네트워크 구축
-          <Link to="/work/hauto-bc" />
-        </MenuItem>
-        <hr />
-        <MenuItem prefix="03." suffix="2020">
-          현대카드 블록체인 운영
-          <Link to="/work/hcard-bc-sm" />
-        </MenuItem>
-        <hr />
-        <MenuItem prefix="04." suffix="2019">
-          현대카드 블록체인 네트워크 구축
-          <Link to="/work/hcard-bc" />
-        </MenuItem>
-        <hr />
-        <MenuItem prefix="05." suffix="2018">
-          NH 블록체인 구축
-          <Link to="/work/nh-p2p" />
-        </MenuItem>
-        <hr />
+        {menuList.map((menu, index) => (
+          <>
+            <MenuItem prefix={`${index + 1}.`} suffix={menu.year}>
+              {menu.name}
+              <Link to="/work/unicef-renew" />
+            </MenuItem>
+            <HR />
+          </>
+        ))}
       </MenuContainer>
     </Container>
   );
+};
+
+SubMenu.propTypes = {
+  menuList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default SubMenu;

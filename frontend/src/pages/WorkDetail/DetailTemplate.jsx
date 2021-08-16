@@ -6,7 +6,7 @@ import Sidebar from '../../components/Menu/Sidebar';
 import BodyHeader from '../../components/Header/BodyHeader';
 import HR from '../../components/HR';
 import Info from '../../components/Info/Info';
-import ExperienceContent from '../../components/About/ExperienceContent';
+import BasicContent from '../../components/Content/BasicContent';
 
 // body 영역 style
 const Body = styled.div`
@@ -39,7 +39,7 @@ const IntroductionContent = styled.span`
 `;
 
 // 경험 영역 style
-const Experience = styled.div`
+const TechStack = styled.div`
   margin-top: 10%;
 `;
 
@@ -49,6 +49,18 @@ const data = {
   endDate: `2021.08`,
   work: `back-end | front-end, api 개발 및 화면 개발`,
   description: `설명을 적겠습니다.`,
+  techStack: [
+    {
+      skill: `skill`,
+      title: `title`,
+      description: `description`,
+    },
+    {
+      skill: `skill2`,
+      title: `title2`,
+      description: `description2`,
+    },
+  ],
 };
 
 const About = () => {
@@ -88,28 +100,20 @@ const About = () => {
         <Introduction>
           <Title>Introduce</Title>
           <div>
-            <IntroductionContent>자기소개 내용</IntroductionContent>
+            <IntroductionContent>{data.description}</IntroductionContent>
           </div>
         </Introduction>
-        <Experience>
-          <Title>Experience</Title>
+        <TechStack>
+          <Title>Tech Stack</Title>
           <HR />
-          <ExperienceContent
-            title="Computer Programming"
-            subTitle="Student"
-            content="4년간 컴퓨터 프로그래밍 기본과 이해를 배움"
-          />
-          <ExperienceContent
-            title="Blockchain"
-            subTitle="programmer(blockchain)"
-            content="2년간 hyperledger 기반 blockchain network 구축과 운영을 수행"
-          />
-          <ExperienceContent
-            title="Web Programming"
-            subTitle="programmer(front-end / back-end)"
-            content="1년간 React.js, Node.js, Spring, Oracle, MSSql 등을 사용한 웹 서비스 구축"
-          />
-        </Experience>
+          {data.techStack.map(skill => (
+            <BasicContent
+              title={skill.skill}
+              subTitle={skill.title}
+              content={skill.description}
+            />
+          ))}
+        </TechStack>
       </Body>
     </div>
   );
