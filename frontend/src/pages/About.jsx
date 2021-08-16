@@ -6,7 +6,7 @@ import Sidebar from '../components/Menu/Sidebar';
 import BodyHeader from '../components/Header/BodyHeader';
 import HR from '../components/HR';
 import Info from '../components/Info/Info';
-import ExperienceContent from '../components/About/ExperienceContent';
+import BasicContent from '../components/Content/BasicContent';
 
 // body 영역 style
 const Body = styled.div`
@@ -88,17 +88,17 @@ const About = () => {
         <Experience>
           <Title>Experience</Title>
           <HR />
-          <ExperienceContent
+          <BasicContent
             title="Computer Programming"
             subTitle="Student"
             content="4년간 컴퓨터 프로그래밍 기본과 이해를 배움"
           />
-          <ExperienceContent
+          <BasicContent
             title="Blockchain"
             subTitle="programmer(blockchain)"
             content="2년간 hyperledger 기반 blockchain network 구축과 운영을 수행"
           />
-          <ExperienceContent
+          <BasicContent
             title="Web Programming"
             subTitle="programmer(front-end / back-end)"
             content="1년간 React.js, Node.js, Spring, Oracle, MSSql 등을 사용한 웹 서비스 구축"

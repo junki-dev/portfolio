@@ -46,3 +46,8 @@ code {
   font-family: 'SangSang';
   src: url('../assets/font/locus_sangsang.otf');
 }
+
+@font-face {
+  font-family: 'Cafe24SurroundAir';
+  src: url('../assets/font/Cafe24SsurroundAir.ttf');
+}
