@@ -47,6 +47,7 @@ const data = {
   name: `현대오토에버 블록체인 네트워크 구축`,
   startDate: `2021.04`,
   endDate: `2021.08`,
+  role: `developer`,
   work: `back-end | front-end, api 개발 및 화면 개발`,
   description: `설명을 적겠습니다.`,
   techStack: [
@@ -63,7 +64,7 @@ const data = {
   ],
 };
 
-const About = () => {
+const DetailTemplate = () => {
   // const { project } = useParams();
   // console.log(project);
   /** axois 예제 */
@@ -94,8 +95,9 @@ const About = () => {
         <BodyHeader title={data.name} />
         <HR />
         <InfoContainer>
-          <Info title="When" content={`${data.startDate} - ${data.endDate}`} />
+          <Info title="Role" content={data.role} />
           <Info title="What" content={data.work} />
+          <Info title="When" content={`${data.startDate} - ${data.endDate}`} />
         </InfoContainer>
         <Introduction>
           <Title>Introduce</Title>
@@ -119,4 +121,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default DetailTemplate;
