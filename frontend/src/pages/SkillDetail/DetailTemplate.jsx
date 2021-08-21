@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components';
 // import { useParams } from 'react-router-dom';
 import Sidebar from '../../components/Menu/Sidebar';
-import BodyHeader from '../../components/Header/BodyHeader';
 import HR from '../../components/HR';
 import Info from '../../components/Info/Info';
 import BasicContent from '../../components/Content/BasicContent';
@@ -12,6 +11,13 @@ import BasicContent from '../../components/Content/BasicContent';
 const Body = styled.div`
   margin: 5%;
   width: 60%;
+`;
+
+// body 제목 style
+const BodyTitle = styled.span`
+  display: inline-block;
+  font-size: 4vw;
+  font-family: BigShouldersBold;
 `;
 
 // 기본 정보 영역 style
@@ -29,7 +35,7 @@ const Introduction = styled.div`
 const Title = styled.span`
   letter-spacing: -1px;
   font-size: 1.5vw;
-  font-family: SangSang;
+  font-family: BigShouldersBold;
 `;
 
 // 소개 내용 style
@@ -44,10 +50,11 @@ const TechStack = styled.div`
 `;
 
 const data = {
-  name: `현대오토에버 블록체인 네트워크 구축`,
-  startDate: `2021.04`,
+  name: `Blockchain`,
+  since: `2018`,
+  count: `4`,
+  stack: `Hyperledger`,
   endDate: `2021.08`,
-  role: `developer`,
   work: `back-end | front-end, api 개발 및 화면 개발`,
   description: `설명을 적겠습니다.`,
   techStack: [
@@ -92,12 +99,12 @@ const DetailTemplate = () => {
       <p>--------------------------</p> */}
       <Sidebar />
       <Body>
-        <BodyHeader title={data.name} />
+        <BodyTitle>{data.name}</BodyTitle>
         <HR />
         <InfoContainer>
-          <Info title="Role" content={data.role} />
-          <Info title="What" content={data.work} />
-          <Info title="When" content={`${data.startDate} - ${data.endDate}`} />
+          <Info title="Since" content={data.since} />
+          <Info title="Projects" content={data.count} />
+          <Info title="Tech Stack " content={data.stack} />
         </InfoContainer>
         <Introduction>
           <Title>Introduce</Title>

@@ -39,15 +39,15 @@ const MenuContainer = styled(Menu)`
   }
 `;
 
-const SubMenu = ({ menuList }) => {
+const BasicMenuTemplate = ({ menuList }) => {
   return (
     <Container>
       <MenuContainer>
         {menuList.map((menu, index) => (
           <>
-            <MenuItem prefix={`${index + 1}.`} suffix={menu.year}>
+            <MenuItem prefix={`${index + 1}.`} suffix={menu.suffix}>
               {menu.name}
-              <Link to="/work/unicef-renew" />
+              <Link to={menu.link} />
             </MenuItem>
             <HR />
           </>
@@ -57,8 +57,8 @@ const SubMenu = ({ menuList }) => {
   );
 };
 
-SubMenu.propTypes = {
+BasicMenuTemplate.propTypes = {
   menuList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default SubMenu;
+export default BasicMenuTemplate;
