@@ -5,6 +5,7 @@ import TypingEffect from '../components/TypingEffect';
 import About from './About';
 import Work from './Work';
 import WorkDetail from './WorkDetail/DetailTemplate';
+import SkillDetail from './SkillDetail/DetailTemplate';
 import Skill from './Skill';
 import Lab from './Lab';
 
@@ -20,6 +21,7 @@ const Portfolio = () => {
           <Route path="/work" exact render={() => <Work />} />
           <Route path="/work/:project" exact render={() => <WorkDetail />} />
           <Route path="/skill" exact render={() => <Skill />} />
+          <Route path="/skill/:skill" exact render={() => <SkillDetail />} />
           <Route path="/lab" exact render={() => <Lab />} />
         </Switch>
       </Router>
