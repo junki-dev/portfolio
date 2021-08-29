@@ -1,11 +1,10 @@
 import React from 'react';
 // import axios from 'axios';
 import styled from 'styled-components';
-// import { useParams } from 'react-router-dom';
 import Sidebar from '../../components/Menu/Sidebar';
 import HR from '../../components/HR';
 import Info from '../../components/Info/Info';
-import BasicContent from '../../components/Content/BasicContent';
+import DefaultModal from '../../components/Modal/DefaultModal';
 
 // body 영역 style
 const Body = styled.div`
@@ -51,22 +50,17 @@ const TechStack = styled.div`
 
 const data = {
   name: `Blockchain`,
-  since: `2018`,
   count: `4`,
   stack: `Hyperledger`,
   endDate: `2021.08`,
   work: `back-end | front-end, api 개발 및 화면 개발`,
   description: `설명을 적겠습니다.`,
-  techStack: [
+  troubles: [
     {
-      skill: `skill`,
-      title: `title`,
-      description: `description`,
+      title: `trouble1`,
     },
     {
-      skill: `skill2`,
-      title: `title2`,
-      description: `description2`,
+      title: `trouble2`,
     },
   ],
 };
@@ -102,25 +96,24 @@ const DetailTemplate = () => {
         <BodyTitle>{data.name}</BodyTitle>
         <HR />
         <InfoContainer>
-          <Info title="Since" content={data.since} />
           <Info title="Projects" content={data.count} />
           <Info title="Tech Stack " content={data.stack} />
         </InfoContainer>
         <Introduction>
-          <Title>Introduce</Title>
+          <Title>Explanation</Title>
           <div>
             <IntroductionContent>{data.description}</IntroductionContent>
           </div>
         </Introduction>
         <TechStack>
-          <Title>Tech Stack</Title>
+          <Title>Trouble Shooting</Title>
           <HR />
-          {data.techStack.map(skill => (
-            <BasicContent
-              title={skill.skill}
-              subTitle={skill.title}
-              content={skill.description}
-            />
+          {data.troubles.map(trouble => (
+            <>
+              {/* <ContentTitle>{trouble.title}</ContentTitle> */}
+              <DefaultModal title={trouble.title} />
+              <HR />
+            </>
           ))}
         </TechStack>
       </Body>
