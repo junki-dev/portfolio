@@ -12,7 +12,7 @@ const HeaderContainer = styled.div`
 
 const Title = styled.span`
   display: inline-block;
-  font-size: 3vw;
+  font-size: 2.5vw;
   letter-spacing: -1px;
   font-family: Cafe24SurroundAir;
 `;

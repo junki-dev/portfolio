@@ -37,7 +37,7 @@ const BasicContent = ({ title, subTitle, content }) => {
       <Container>
         <Title>{title}</Title>
         <ContentContainer>
-          <SubTitle>{subTitle}</SubTitle>
+          <SubTitle>{subTitle || ``}</SubTitle>
           <br />
           <SubContent>{content}</SubContent>
         </ContentContainer>
@@ -49,8 +49,12 @@ const BasicContent = ({ title, subTitle, content }) => {
 
 BasicContent.propTypes = {
   title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
+  subTitle: PropTypes.string,
   content: PropTypes.string.isRequired,
+};
+
+BasicContent.defaultProps = {
+  subTitle: ``,
 };
 
 export default BasicContent;

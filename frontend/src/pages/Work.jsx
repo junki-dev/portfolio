@@ -1,42 +1,46 @@
-import React from 'react';
-import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
-// import axios from 'axios';
+import React, { useCallback, useState, useEffect } from 'react';
+import axios from 'axios';
 
+import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
 import Sidebar from '../components/Menu/Sidebar';
 
-const menuList = [
-  {
-    name: `유니세프 홈페이지 리뉴얼`,
-    suffix: 2021,
-    link: `/work/unicef-renew`,
-  },
-  {
-    name: `현대오토에버 블록체인 네트워크 구축`,
-    suffix: 2021,
-    link: `/work/unicef-renew`,
-  },
-  {
-    name: `현대카드 블록체인 운영`,
-    suffix: 2020,
-    link: `/work/unicef-renew`,
-  },
-  {
-    name: `현대카드 블록체인 네트워크 구축`,
-    suffix: 2019,
-    link: `/work/unicef-renew`,
-  },
-  {
-    name: `NH 블록체인 구축`,
-    suffix: 2018,
-    link: `/work/unicef-renew`,
-  },
-];
-
 const Work = () => {
+  /* 경력 메뉴 조회 */
+  const [workMenu, setWorkMenu] = useState([]);
+
+  const fetchWorkMenu = useCallback(() => {
+    const url = `${process.env.REACT_APP_BACKEND_URL}/career`;
+    axios
+      .get(url)
+      .then(({ data: { resultCode, resultMessage, data } }) => {
+        if (resultCode !== `0`) {
+          console.log(`메뉴 데이터 조회 실패: ${resultMessage}`);
+          window.location.href = `/`;
+        }
+
+        data.map(newMenu =>
+          setWorkMenu(prevMenu => [
+            ...prevMenu,
+            { id: newMenu.id, title: newMenu.title, suffix: newMenu.startDate },
+          ]),
+        );
+      })
+      .catch(() => {
+        return null;
+      });
+  }, [workMenu]);
+
+  useEffect(() => {
+    console.log(workMenu);
+    if (workMenu.length < 1) {
+      fetchWorkMenu();
+    }
+  }, []);
+
   return (
     <div className="home">
       <Sidebar />
-      <BasicMenuTemplate menuList={menuList} />
+      <BasicMenuTemplate menuList={workMenu} />
     </div>
   );
 };
