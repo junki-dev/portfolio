@@ -12,6 +12,7 @@ const CareerSchema = new Schema(
     endDate: { type: String, required: false },
     work: { type: String, required: true },
     participants: { type: Number, required: true },
+    summary: { type: String, required: false },
     description: { type: String, required: true },
     skill: { type: [String], required: true },
     perform: { type: [String], required: true },
