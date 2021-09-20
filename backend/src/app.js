@@ -19,7 +19,8 @@ mongoose
   .catch(e => logger.error(e));
 
 // 라우팅
-app.use('/career', require('./router/career'));
+app.use('/career', require('./router/career')); // 경력 관련 routing
+app.use('/skill', require('./router/skill')); // 기술 관련 routing
 
 // 서버 구동
 app.listen(PORT, () => logger.info(`Server listening on port ${PORT}`));

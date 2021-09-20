@@ -1,7 +1,7 @@
-import React from 'react';
-// import axios from 'axios';
+import React, { useCallback, useEffect, useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Sidebar from '../../components/Menu/Sidebar';
 import BodyHeader from '../../components/Header/BodyHeader';
 import HR from '../../components/HR';
@@ -20,12 +20,12 @@ const InfoContainer = styled.div`
   display: flex;
 `;
 
-// 소개 영역 style
-const Introduction = styled.div`
+// 공통 영역 style
+const CommonContainer = styled.div`
   margin-top: 5%;
 `;
 
-// 소개 제목 style
+// 소개 제목 영역
 const Title = styled.span`
   letter-spacing: -1px;
   font-size: 1.5vw;
@@ -33,89 +33,102 @@ const Title = styled.span`
 `;
 
 // 소개 내용 style
-const IntroductionContent = styled.span`
+const IntroductionContent = styled.div`
   font-size: 1vw;
   font-family: EconomicRegular;
 `;
 
-// 경험 영역 style
-const TechStack = styled.div`
-  margin-top: 10%;
+// 소개 내용 style
+const PerformanceList = styled.ul`
+  font-size: 1vw;
+  font-family: EconomicRegular;
 `;
 
-const data = {
-  name: `현대오토에버 블록체인 네트워크 구축`,
-  startDate: `2021.04`,
-  endDate: `2021.08`,
-  role: `developer`,
-  work: `back-end | front-end, api 개발 및 화면 개발`,
-  description: `설명을 적겠습니다.`,
-  techStack: [
-    {
-      skill: `skill`,
-      title: `title`,
-      description: `description`,
-    },
-    {
-      skill: `skill2`,
-      title: `title2`,
-      description: `description2`,
-    },
-  ],
-};
+// 기술 스택 영역 style
+const Skills = styled.div`
+  margin-top: 10%;
+
+  .span {
+    letter-spacing: -1px;
+    font-size: 1.5vw;
+    font-family: SangSang;
+  }
+`;
 
 const DetailTemplate = () => {
-  // const { project } = useParams();
-  // console.log(project);
-  /** axois 예제 */
-  // const [userName, setUserName] = useState();
+  const { id } = useParams(); // parameter : 프로젝트 id
+  const [workData, setWorkData] = useState(); // 경력 데이터 state
 
-  // const fetchUserName = async () => {
-  //   console.log(`===========================`);
-  //   const url = 'http://localhost:4500/';
-  //   axios
-  //     .get(url)
-  //     .then(function (response) {
-  //       setUserName(response.data.userName);
-  //       console.log(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(`실패 + ${error}`);
-  //     });
-  // };
+  // 경력 데이터 로드
+  const loadWorkData = useCallback(() => {
+    const url = `${process.env.REACT_APP_BACKEND_URL}/career/getCareerByData`;
+    axios
+      .get(url, {
+        params: {
+          id,
+        },
+      })
+      .then(({ data: { resultCode, resultMessage, data } }) => {
+        if (resultCode !== `0`) {
+          console.log(`데이터 조회 실패: ${resultMessage}`);
+          window.location.href = `/`;
+        }
+        setWorkData(data);
+      })
+      .catch(() => {
+        return null;
+      });
+  }, [workData]);
+
+  useEffect(() => {
+    loadWorkData();
+  }, []);
 
   return (
     <div className="home">
-      {/* <p>--------------------------</p>
-      {userName}
-      <input type="submit" onClick={fetchUserName} value="get" />
-      <p>--------------------------</p> */}
       <Sidebar />
       <Body>
-        <BodyHeader title={data.name} />
+        <BodyHeader title={workData && workData.name} />
         <HR />
         <InfoContainer>
-          <Info title="Role" content={data.role} />
-          <Info title="What" content={data.work} />
-          <Info title="When" content={`${data.startDate} - ${data.endDate}`} />
+          <Info title="Role" content={workData && workData.role} />
+          <Info title="What" content={workData && workData.work} />
+          <Info
+            title="When"
+            content={`${workData && workData.startDate} - ${
+              workData && workData.endDate
+            }`}
+          />
         </InfoContainer>
-        <Introduction>
+        <CommonContainer>
           <Title>Introduce</Title>
           <div>
-            <IntroductionContent>{data.description}</IntroductionContent>
+            <IntroductionContent>
+              {workData && workData.description}
+            </IntroductionContent>
           </div>
-        </Introduction>
-        <TechStack>
-          <Title>Tech Stack</Title>
+        </CommonContainer>
+        <CommonContainer>
+          <Title>Performance</Title>
+          <div>
+            <PerformanceList>
+              {workData && workData.perform.map(data => <li>{data}</li>)}
+            </PerformanceList>
+          </div>
+        </CommonContainer>
+        <Skills>
+          <Title>Skills</Title>
           <HR />
-          {data.techStack.map(skill => (
-            <BasicContent
-              title={skill.skill}
-              subTitle={skill.title}
-              content={skill.description}
-            />
-          ))}
-        </TechStack>
+          {workData &&
+            workData.skills.map(data => (
+              <BasicContent
+                key={data.id}
+                title={data.name}
+                subTitle={data.summary}
+                content={data.description}
+              />
+            ))}
+        </Skills>
       </Body>
     </div>
   );

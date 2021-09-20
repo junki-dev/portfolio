@@ -1,4 +1,4 @@
-const careerService = require('../../service/careerService');
+const careerService = require('../../service/career/careerService');
 const logger = require('../../config/winston');
 const { setResponse } = require('../../config/commonResponse');
 // const career = require('../../models/career');

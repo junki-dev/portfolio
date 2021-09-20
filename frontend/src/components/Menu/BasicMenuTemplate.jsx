@@ -13,6 +13,7 @@ const Container = styled(ProSidebar)`
 
 const MenuContainer = styled(Menu)`
   width: 100%;
+  padding-top: 0px !important;
 
   .pro-inner-item {
     height: 10vh;
@@ -20,22 +21,27 @@ const MenuContainer = styled(Menu)`
 
   .pro-item-content {
     height: 100%;
-    font-size: 3em;
-    font-family: Cafe24SurroundAir;
+    font-size: 2.7em;
+    font-family: BigShouldersBold;
     letter-spacing: -1px;
   }
 
   .prefix-wrapper {
-    font-size: 1em;
-    font-family: Cafe24SurroundAir;
+    font-size: 1.2em;
+    font-family: BigShouldersBold;
     letter-spacing: -1px;
   }
 
   .suffix-wrapper {
-    font-size: 1em;
-    font-family: Cafe24SurroundAir;
+    font-size: 1.2em;
+    font-family: BigShouldersBold;
     letter-spacing: -1px;
-    margin-left: 0px;
+    text-align: end;
+    white-space: nowrap;
+    max-width: 15%;
+    width: 15%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 `;
 
@@ -46,8 +52,8 @@ const BasicMenuTemplate = ({ menuList }) => {
         {menuList.map((menu, index) => (
           <>
             <MenuItem prefix={`${index + 1}.`} suffix={menu.suffix}>
-              {menu.name}
-              <Link to={menu.link} />
+              {menu.title}
+              <Link to={`work/${menu.id}`} />
             </MenuItem>
             <HR />
           </>
