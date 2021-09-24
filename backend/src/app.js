@@ -19,6 +19,8 @@ mongoose
   .catch(e => logger.error(e));
 
 // 라우팅
+logger.info(__dirname);
+app.use(express.static(`${__dirname}/../../frontend/build`)); // 메인화면
 app.use('/career', require('./router/career')); // 경력 관련 routing
 app.use('/skill', require('./router/skill')); // 기술 관련 routing
 
