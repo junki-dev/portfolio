@@ -53,7 +53,7 @@ const BasicMenuTemplate = ({ menuList }) => {
           <>
             <MenuItem prefix={`${index + 1}.`} suffix={menu.suffix}>
               {menu.title}
-              <Link to={`work/${menu.id}`} />
+              <Link to={`${menu.link}`} />
             </MenuItem>
             <HR />
           </>

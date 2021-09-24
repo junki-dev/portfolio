@@ -50,6 +50,7 @@ const Skill = () => {
               suffix: newMenu.techStack.map(skill => {
                 return `${skill.name}`;
               }),
+              link: `skill/${newMenu.name}`,
             },
           ]);
         });

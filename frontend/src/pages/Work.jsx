@@ -21,7 +21,12 @@ const Work = () => {
         data.map(newMenu =>
           setWorkMenu(prevMenu => [
             ...prevMenu,
-            { id: newMenu.id, title: newMenu.title, suffix: newMenu.startDate },
+            {
+              id: newMenu.id,
+              title: newMenu.title,
+              suffix: newMenu.startDate,
+              link: `work/${newMenu.id}`,
+            },
           ]),
         );
       })
