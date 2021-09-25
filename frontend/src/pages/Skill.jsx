@@ -4,29 +4,6 @@ import axios from 'axios';
 import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
 import Sidebar from '../components/Menu/Sidebar';
 
-// const menuList = [
-//   {
-//     name: `Blockchain`,
-//     suffix: `Hyperldger`,
-//     link: `/skill/blockchain`,
-//   },
-//   {
-//     name: `Back-end`,
-//     suffix: `Spring, Node.js`,
-//     link: `/skill/back-end`,
-//   },
-//   {
-//     name: `Font-end`,
-//     suffix: `Rect.js`,
-//     link: `/skill/front-end`,
-//   },
-//   {
-//     name: `Infra`,
-//     suffix: `Rect.js`,
-//     link: `/skill/infra`,
-//   },
-// ];
-
 const Skill = () => {
   /* 기술 메뉴 조회 */
   const [skillMenu, setSkillMenu] = useState([]);
@@ -42,6 +19,7 @@ const Skill = () => {
         }
 
         data.map(newMenu => {
+          const name = newMenu.name.toLowerCase();
           return setSkillMenu(prevMenu => [
             ...prevMenu,
             {
@@ -50,7 +28,7 @@ const Skill = () => {
               suffix: newMenu.techStack.map(skill => {
                 return `${skill.name}`;
               }),
-              link: `skill/${newMenu.name}`,
+              link: `skill/${name}`,
             },
           ]);
         });

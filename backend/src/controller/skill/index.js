@@ -11,3 +11,14 @@ exports.getSkillMenuList = async (request, response) => {
     return setResponse(response, code, data);
   });
 };
+
+exports.getSkillDetail = async (request, response) => {
+  logger.debug(
+    `### [ skillController - getSkillDetail() ] - ${request.query.id} 경력 상세 조회 API가 호출 되었습니다.`,
+  );
+
+  const skillName = request.query.name;
+  skillService.getSkillDetail(skillName, (code, data) => {
+    return setResponse(response, code, data);
+  });
+};
