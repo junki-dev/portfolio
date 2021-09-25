@@ -21,7 +21,7 @@ const Portfolio = () => {
           <Route path="/work" exact render={() => <Work />} />
           <Route path="/work/:id" exact render={() => <WorkDetail />} />
           <Route path="/skill" exact render={() => <Skill />} />
-          <Route path="/skill/:skill" exact render={() => <SkillDetail />} />
+          <Route path="/skill/:name" exact render={() => <SkillDetail />} />
           <Route path="/lab" exact render={() => <Lab />} />
         </Switch>
       </Router>

@@ -1,10 +1,17 @@
-import React from 'react';
-// import axios from 'axios';
+import React, { useCallback, useEffect, useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
+import { useParams } from 'react-router-dom';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
+import 'react-accessible-accordion/dist/fancy-example.css';
 import Sidebar from '../../components/Menu/Sidebar';
 import HR from '../../components/HR';
-import Info from '../../components/Info/Info';
-import DefaultModal from '../../components/Modal/DefaultModal';
 
 // body 영역 style
 const Body = styled.div`
@@ -19,83 +26,62 @@ const BodyTitle = styled.span`
   font-family: BigShouldersBold;
 `;
 
-// 기본 정보 영역 style
-const InfoContainer = styled.div`
-  margin-top: 5%;
-  display: flex;
-`;
-
-// 소개 영역 style
-const Introduction = styled.div`
-  margin-top: 5%;
-`;
-
-// 소개 제목 style
-const Title = styled.span`
-  letter-spacing: -1px;
-  font-size: 1.5vw;
-  font-family: BigShouldersBold;
-`;
-
-// 소개 내용 style
-const IntroductionContent = styled.span`
-  font-size: 1vw;
-  font-family: EconomicRegular;
-`;
-
-// 경험 영역 style
-const TechStack = styled.div`
-  margin-top: 10%;
-`;
-
-const data = {
-  name: `Blockchain`,
-  count: `4`,
-  stack: `Hyperledger`,
-  endDate: `2021.08`,
-  work: `back-end | front-end, api 개발 및 화면 개발`,
-  description: `설명을 적겠습니다.`,
-  troubles: [
-    {
-      title: `trouble1`,
-    },
-    {
-      title: `trouble2`,
-    },
-  ],
-};
-
 const DetailTemplate = () => {
-  // const { project } = useParams();
-  // console.log(project);
-  /** axois 예제 */
-  // const [userName, setUserName] = useState();
+  const { name } = useParams(); // parameter : 기술 이름
+  const [skillData, setSkillData] = useState(); // 경력 데이터 state
 
-  // const fetchUserName = async () => {
-  //   console.log(`===========================`);
-  //   const url = 'http://localhost:4500/';
-  //   axios
-  //     .get(url)
-  //     .then(function (response) {
-  //       setUserName(response.data.userName);
-  //       console.log(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(`실패 + ${error}`);
-  //     });
-  // };
+  // 기술 데이터 로드
+  const loadSkillData = useCallback(() => {
+    const url = `${process.env.REACT_APP_BACKEND_URL}/skill/getSkillByName`;
+    axios
+      .get(url, {
+        params: {
+          name,
+        },
+      })
+      .then(({ data: { resultCode, resultMessage, data } }) => {
+        if (resultCode !== `0`) {
+          console.log(`데이터 조회 실패: ${resultMessage}`);
+          window.location.href = `/`;
+        }
+        setSkillData(data);
+      })
+      .catch(() => {
+        return null;
+      });
+  }, [skillData]);
+
+  useEffect(() => {
+    loadSkillData();
+  }, []);
 
   return (
     <div className="home">
-      {/* <p>--------------------------</p>
-      {userName}
-      <input type="submit" onClick={fetchUserName} value="get" />
-      <p>--------------------------</p> */}
       <Sidebar />
       <Body>
-        <BodyTitle>{data.name}</BodyTitle>
+        <BodyTitle>{name}</BodyTitle>
         <HR />
-        <InfoContainer>
+
+        <Accordion>
+          {!!skillData &&
+            skillData.techStack.map(skill => (
+              <AccordionItem>
+                <AccordionItemHeading>
+                  <AccordionItemButton>{skill.name}</AccordionItemButton>
+                </AccordionItemHeading>
+                <AccordionItemPanel>
+                  <p>
+                    Exercitation in fugiat est ut ad ea cupidatat ut in
+                    cupidatat occaecat ut occaecat consequat est minim minim
+                    esse tempor laborum consequat esse adipisicing eu
+                    reprehenderit enim.
+                  </p>
+                </AccordionItemPanel>
+              </AccordionItem>
+            ))}
+        </Accordion>
+
+        {/* <InfoContainer>
           <Info title="Projects" content={data.count} />
           <Info title="Tech Stack " content={data.stack} />
         </InfoContainer>
@@ -110,12 +96,11 @@ const DetailTemplate = () => {
           <HR />
           {data.troubles.map(trouble => (
             <>
-              {/* <ContentTitle>{trouble.title}</ContentTitle> */}
               <DefaultModal title={trouble.title} />
               <HR />
             </>
           ))}
-        </TechStack>
+        </TechStack> */}
       </Body>
     </div>
   );

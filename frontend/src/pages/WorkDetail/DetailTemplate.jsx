@@ -61,7 +61,7 @@ const DetailTemplate = () => {
 
   // 경력 데이터 로드
   const loadWorkData = useCallback(() => {
-    const url = `${process.env.REACT_APP_BACKEND_URL}/career/getCareerByData`;
+    const url = `${process.env.REACT_APP_BACKEND_URL}/career/getCareerById`;
     axios
       .get(url, {
         params: {
