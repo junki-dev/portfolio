@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+const TroubleSchema = new Schema({
+  title: { type: String, required: true, unique: true },
+  description: { type: String, required: true },
+});
+
 // 경력 스키마 정의
 const CareerSchema = new Schema(
   {
@@ -16,6 +21,7 @@ const CareerSchema = new Schema(
     description: { type: String, required: true },
     skill: { type: [String], required: true },
     perform: { type: [String], required: true },
+    troubleshooting: { type: [TroubleSchema], required: false },
     useYn: { type: String, required: true },
     completeYn: { type: String, required: true },
   },
