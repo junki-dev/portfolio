@@ -1,9 +1,8 @@
-const careerService = require('../../service/career/careerService');
-const logger = require('../../config/winston');
-const { setResponse } = require('../../config/commonResponse');
-// const career = require('../../models/career');
+import careerService from './../../service/career/careerService.js';
+import logger from '../../config/winston.js';
+import { setResponse } from '../../config/commonResponse.js';
 
-exports.getCareerList = async (request, response) => {
+const getCareerList = async (request, response) => {
   logger.debug(
     `## [ careerController - getCareerList() ] - 경력 조회 API가 호출 되었습니다.`,
   );
@@ -13,7 +12,7 @@ exports.getCareerList = async (request, response) => {
   });
 };
 
-exports.getCareerDetail = async (request, response) => {
+const getCareerDetail = async (request, response) => {
   logger.debug(
     `### [ careerController - getCareerDetail() ] - ${request.query.id} 경력 상세 조회 API가 호출 되었습니다.`,
   );
@@ -23,3 +22,5 @@ exports.getCareerDetail = async (request, response) => {
     return setResponse(response, code, data);
   });
 };
+
+export default { getCareerList, getCareerDetail };

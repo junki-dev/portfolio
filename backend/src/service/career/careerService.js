@@ -1,8 +1,8 @@
-const logger = require('../../config/winston');
-const Career = require('../../models/career');
-const { resultCode } = require('../../config/commonResponse');
+import logger from '../../config/winston.js';
+import Career from '../../models/career.js';
+import { resultCode } from '../../config/commonResponse.js';
 
-exports.getCareerList = callback => {
+const getCareerList = callback => {
   try {
     Career.find()
       .sort({ startDate: -1, endDate: -1 })
@@ -15,7 +15,7 @@ exports.getCareerList = callback => {
   }
 };
 
-exports.getCareerDetail = (careerId, callback) => {
+const getCareerDetail = (careerId, callback) => {
   try {
     Career.findOne({ id: careerId }).then(data => {
       callback(resultCode.SUCCESS, data);
@@ -25,3 +25,5 @@ exports.getCareerDetail = (careerId, callback) => {
     callback(resultCode.DATABASE_ERROR, null);
   }
 };
+
+export default { getCareerList, getCareerDetail };

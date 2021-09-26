@@ -1,11 +1,17 @@
-require('dotenv').config(); // 환경변수를 파일에 저장하기 위한 패키지
-const express = require('express'); // 웹어플리케이션 개발을 위한 패키지
-const cors = require('cors'); // cors에러를 위한 패키지 : 삭제 예정
-const mongoose = require('mongoose'); // mongodb 연결을 위한 패키지
-const logger = require('./config/winston'); // winston 로그 설정
+import express from 'express'; // 웹어플리케이션 개발을 위한 패키지
+import mongoose from 'mongoose'; // mongodb 연결을 위한 패키지
+import dotenv from 'dotenv'; // 환경변수를 파일에 저장하기 위한 패키지
+import path from 'path'; // 파일과 Directory 경로 작업을 위한 패키지
+import cors from 'cors'; // cors에러를 위한 패키지 : 삭제 예정
+import logger from './config/winston.js'; // winston 로그 설정
+import careerRouter from './router/career/index.js'; // career 라우터
+import skillRouter from './router/skill/index.js'; // career 라우터
+
+dotenv.config(); // 환경변수를 파일에 저장하기 위한 패키지
 
 logger.debug(`# JUNKI PORTFOLIO BACKEND SERVER STARTing...`);
 const app = express(); // 애플리케이션 미들웨어 바인딩
+const __dirname = path.resolve(); // 디렉토리의 절대경로를 반환
 const { PORT, MONGO_URI } = process.env; // 서버 포트 지정
 
 /* middleware 설정 */
@@ -19,10 +25,9 @@ mongoose
   .catch(e => logger.error(e));
 
 // 라우팅
-logger.info(__dirname);
 app.use(express.static(`${__dirname}/../../frontend/build`)); // 메인화면
-app.use('/career', require('./router/career')); // 경력 관련 routing
-app.use('/skill', require('./router/skill')); // 기술 관련 routing
+app.use('/career', careerRouter); // 경력 관련 routing
+app.use('/skill', skillRouter); // 기술 관련 routing
 
 // 서버 구동
 app.listen(PORT, () => logger.info(`Server listening on port ${PORT}`));

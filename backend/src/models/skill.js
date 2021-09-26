@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
@@ -26,4 +26,4 @@ const SkillSchema = new Schema(
 );
 
 // Model 모듈화
-module.exports = mongoose.model('Skill', SkillSchema);
+export default mongoose.model('Skill', SkillSchema);

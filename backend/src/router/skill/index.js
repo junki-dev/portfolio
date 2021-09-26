@@ -1,9 +1,9 @@
-const express = require('express');
-const skillController = require('../../controller/skill');
+import express from 'express';
+import skillController from '../../controller/skill/index.js';
 
-const router = express.Router();
+const skillRouter = express.Router();
 
-router.get('/', skillController.getSkillMenuList);
-router.get('/getSkillByName', skillController.getSkillDetail);
+skillRouter.get('/', skillController.getSkillMenuList);
+skillRouter.get('/getSkillByName', skillController.getSkillDetail);
 
-module.exports = router;
+export default skillRouter;
