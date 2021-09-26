@@ -1,8 +1,8 @@
-const logger = require('../../config/winston');
-const Skill = require('../../models/skill');
-const { resultCode } = require('../../config/commonResponse');
+import logger from '../../config/winston.js';
+import Skill from '../../models/skill.js';
+import { resultCode } from '../../config/commonResponse.js';
 
-exports.getSkillMenuList = callback => {
+const getSkillMenuList = callback => {
   try {
     Skill.find()
       .sort({ order: 1 })
@@ -15,7 +15,7 @@ exports.getSkillMenuList = callback => {
   }
 };
 
-exports.getSkillDetail = (skillName, callback) => {
+const getSkillDetail = (skillName, callback) => {
   try {
     Skill.findOne({ name: { $regex: skillName, $options: 'i' } }).then(data => {
       callback(resultCode.SUCCESS, data);
@@ -25,3 +25,5 @@ exports.getSkillDetail = (skillName, callback) => {
     callback(resultCode.DATABASE_ERROR, null);
   }
 };
+
+export default { getSkillMenuList, getSkillDetail };

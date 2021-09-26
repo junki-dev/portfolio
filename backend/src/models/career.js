@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
 const { Schema } = mongoose;
 
 const TroubleSchema = new Schema({
@@ -29,4 +30,4 @@ const CareerSchema = new Schema(
 );
 
 // Model 모듈화
-module.exports = mongoose.model('Career', CareerSchema);
+export default mongoose.model('Career', CareerSchema);

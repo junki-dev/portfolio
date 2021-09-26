@@ -1,4 +1,4 @@
-exports.resultCode = {
+const resultCode = {
   SUCCESS: { status: 200, code: '0', message: '성공' },
   INVALID_PARAMETER: {
     status: 400,
@@ -17,7 +17,7 @@ exports.resultCode = {
   },
 };
 
-exports.setResponse = (response, resultCode, data) => {
+const setResponse = (response, resultCode, data) => {
   // let resultObj;
   const commonObj = {
     resultCode: resultCode.code,
@@ -31,3 +31,5 @@ exports.setResponse = (response, resultCode, data) => {
 
   return response.status(resultCode.status).json(commonObj);
 };
+
+export { resultCode, setResponse };
