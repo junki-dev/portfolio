@@ -2,6 +2,13 @@ import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 import Sidebar from '../../components/Menu/Sidebar';
 import BodyHeader from '../../components/Header/BodyHeader';
 import HR from '../../components/HR';
@@ -45,7 +52,18 @@ const PerformanceList = styled.ul`
 `;
 
 // 기술 스택 영역 style
-const Skills = styled.div`
+const SkillsSection = styled.div`
+  margin-top: 10%;
+
+  .span {
+    letter-spacing: -1px;
+    font-size: 1.5vw;
+    font-family: SangSang;
+  }
+`;
+
+// troubleshooting 영역 style
+const TroubleSection = styled.div`
   margin-top: 10%;
 
   .span {
@@ -116,7 +134,7 @@ const DetailTemplate = () => {
             </PerformanceList>
           </div>
         </CommonContainer>
-        <Skills>
+        <SkillsSection>
           <Title>Skills</Title>
           <HR />
           {workData &&
@@ -128,7 +146,27 @@ const DetailTemplate = () => {
                 content={data.description}
               />
             ))}
-        </Skills>
+        </SkillsSection>
+        {workData && workData.troubleshooting.length > 0 && (
+          <TroubleSection>
+            <Title>Troubleshooting</Title>
+            <HR />
+            {workData.troubleshooting.map(trouble => (
+              <Accordion allowZeroExpanded>
+                <AccordionItem>
+                  <AccordionItemHeading>
+                    <AccordionItemButton>{trouble.title}</AccordionItemButton>
+                  </AccordionItemHeading>
+                  <AccordionItemPanel>
+                    <div
+                      dangerouslySetInnerHTML={{ __html: trouble.description }}
+                    />
+                  </AccordionItemPanel>
+                </AccordionItem>
+              </Accordion>
+            ))}
+          </TroubleSection>
+        )}
       </Body>
     </div>
   );
