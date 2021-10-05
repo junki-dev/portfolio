@@ -2,6 +2,11 @@ import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
+const ExperienceSchema = new Schema({
+  title: { type: String, required: true, unique: true },
+  description: { type: [String], required: true },
+});
+
 const TroubleSchema = new Schema({
   title: { type: String, required: true, unique: true },
   description: { type: String, required: true },
@@ -21,7 +26,7 @@ const CareerSchema = new Schema(
     summary: { type: String, required: false },
     description: { type: String, required: true },
     skill: { type: [String], required: true },
-    perform: { type: [String], required: true },
+    experience: { type: [ExperienceSchema], required: true },
     troubleshooting: { type: [TroubleSchema], required: false },
     useYn: { type: String, required: true },
     completeYn: { type: String, required: true },
