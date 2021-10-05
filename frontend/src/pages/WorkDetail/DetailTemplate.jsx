@@ -46,7 +46,7 @@ const IntroductionContent = styled.div`
 `;
 
 // 소개 내용 style
-const PerformanceList = styled.ul`
+const ExperienceList = styled.ul`
   font-size: 1vw;
   font-family: EconomicRegular;
 `;
@@ -127,11 +127,20 @@ const DetailTemplate = () => {
           </div>
         </CommonContainer>
         <CommonContainer>
-          <Title>Performance</Title>
+          <Title>Work Experience</Title>
           <div>
-            <PerformanceList>
-              {workData && workData.perform.map(data => <li>{data}</li>)}
-            </PerformanceList>
+            <ExperienceList>
+              {workData &&
+                workData.experience.map(data => (
+                  <li>
+                    {data.title}
+                    <ul>
+                      {!!data.description &&
+                        data.description.map(desc => <li>{desc}</li>)}
+                    </ul>
+                  </li>
+                ))}
+            </ExperienceList>
           </div>
         </CommonContainer>
         <SkillsSection>
