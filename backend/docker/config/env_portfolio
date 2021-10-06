@@ -12,5 +12,5 @@ LOG_LEVEL=into
 # MONGODB INFO
 USER_ID=portfolioUser
 USER_PWD=portfolioPwd
-DB_HOST=mongodb:27018
+DB_HOST=mongodb:27017
 DB_NAME=portfolio
