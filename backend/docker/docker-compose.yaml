@@ -1,0 +1,51 @@
+version: "3.8"
+
+networks:
+  portfolio-network:
+
+services:
+  mongodb:
+    image: mongo:4.2-bionic
+    container_name: mongodb
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "5"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: portfolioUser
+      MONGO_INITDB_ROOT_PASSWORD: portfolioPwd
+      MONGO_INITDB_DATABASE: portfolio
+      TZ: "Asia/Seoul"
+    volumes:
+      - ./volumes/mongodb/data:/data/db
+      - ./volumes/mongodb/log:/var/log/mongodb/
+    ports:
+      - 27018:27017
+    command: mongod
+    networks:
+      - portfolio-network
+
+  faucet:
+    image: portfolio:0.13
+    container_name: portfolio
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "5"
+    environment:
+      MONGO_URI: "mongodb://mongodb:27018/portfolio"
+      TZ: "Asia/Seoul"
+    volumes:
+      - ./volumes/portfolio/logs:/usr/src/logs
+      - ./config/env_portfolio:/usr/src/.env
+    ports:
+      - 80:3000
+    command: npm start
+    depends_on:
+      - mongodb
+    networks:
+      - portfolio-network

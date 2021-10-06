@@ -1,13 +1,11 @@
+import './config/environment.js'; // 환경변수를 파일에 저장하기 위한 패키지
 import express from 'express'; // 웹어플리케이션 개발을 위한 패키지
-import mongoose from 'mongoose'; // mongodb 연결을 위한 패키지
-import dotenv from 'dotenv'; // 환경변수를 파일에 저장하기 위한 패키지
+import mongoose from 'mongoose'; // mongodb 연결을 위한 패키지지
 import path from 'path'; // 파일과 Directory 경로 작업을 위한 패키지
 import cors from 'cors'; // cors에러를 위한 패키지 : 삭제 예정
 import logger from './config/winston.js'; // winston 로그 설정
 import careerRouter from './router/career/index.js'; // career 라우터
 import skillRouter from './router/skill/index.js'; // career 라우터
-
-dotenv.config(); // 환경변수를 파일에 저장하기 위한 패키지
 
 logger.debug(`# JUNKI PORTFOLIO BACKEND SERVER STARTing...`);
 const app = express(); // 애플리케이션 미들웨어 바인딩
