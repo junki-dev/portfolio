@@ -1,55 +1,86 @@
-import winston from 'winston';
-import winstonDaily from 'winston-daily-rotate-file';
+import winston from 'winston'; // 로깅 설정을 위한 패키지
+import winstonDaily from 'winston-daily-rotate-file'; // 일별 로그 로테이션을 위한 패키지
 
-const logDir = 'logs'; // logs 디렉토리 하위에 로그 파일 저장
-const { combine, timestamp, printf } = winston.format;
+const { combine, timestamp, printf, colorize } = winston.format;
+const logDir = 'logs'; // logs 디렉토리 하위에 로그 파일명
 
-// 로그 형식 정의
-const logFormat = printf(({ timestamp, level, message, stack }) => {
-  if (stack) return `${timestamp} ${level} - ${message}\n${stack}`;
-  else return `${timestamp} ${level} - ${message}`;
-});
+// 로그 레벨
+const levels = {
+  error: 0,
+  warn: 1,
+  info: 2,
+  http: 3,
+  debug: 4,
+};
 
-/*
- * Log Level
- * error: 0, warn: 1, info: 2, http: 3, verbose: 4, debug: 5, silly: 6
- */
-const logger = winston.createLogger({
+// 로그 레벨 별 색상
+const colors = {
+  error: 'red',
+  warn: 'yellow',
+  info: 'green',
+  http: 'magenta',
+  debug: 'blue',
+};
+
+// 로그 레벨 별, 색상 지정
+winston.addColors(colors);
+
+// 로그 레벨 지정(debug와 info 만 지정 가능)
+const level = () => {
+  return process.env.LOG_LEVEL === 'info' ? 'info' : 'debug';
+};
+
+// 로그 형식 지정
+const logFormat = combine(
+  timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
+  printf(info => {
+    if (info.stack) {
+      return `${info.timestamp} ${info.level}: ${info.message} \n Error Stack: ${info.stack}`;
+    }
+    return `${info.timestamp} ${info.level}: ${info.message}`;
+  }),
+);
+
+// 콘솔에 찍힐 때는 색깔을 구변해서 로깅 수행
+const consoleOpts = {
+  handleExceptions: true,
+  level: process.env.LOG_LEVEL === 'info' ? 'info' : 'debug',
   format: combine(
-    timestamp({
-      format: 'YYYY-MM-DD HH:mm:ss',
-    }),
-    logFormat,
+    colorize({ all: true }),
+    timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
   ),
-  transports: [
-    new winston.transports.Console({
-      // 콘솔 출력
-      name: 'debug-console',
-      colorize: true,
-      level: 'debug', // debug이상 콘솔 출력
-      showLevel: true,
-      json: false,
-      timestamp: 'YYYY-MM-DD HH:mm:ss',
-    }),
-    new winstonDaily({
-      // info 레벨 로그를 저장할 파일 설정
-      level: process.env.LOG_LEVEL,
-      datePattern: 'YYYY-MM-DD',
-      dirname: logDir,
-      filename: `portfoilo_%DATE%.log`,
-      maxFiles: 365, // 30일치 로그 파일 저장
-      zippedArchive: true,
-    }),
-    new winstonDaily({
-      // error 레벨 로그를 저장할 파일 설정
-      level: 'error',
-      datePattern: 'YYYY-MM-DD',
-      dirname: logDir, // error.log 파일은 /logs/error 하위에 저장
-      filename: `portfoilo-error_%DATE%.log`,
-      maxFiles: 30,
-      zippedArchive: true,
-    }),
-  ],
+};
+
+// 로그 설정
+const transports = [
+  // 콘솔로그에만 색상 구분
+  new winston.transports.Console(consoleOpts),
+  // Info 로그를 저장할 파일 설정
+  new winstonDaily({
+    level: 'info',
+    datePattern: 'YYYY-MM-DD',
+    dirname: logDir,
+    filename: 'portfolio_%DATE%.log',
+    maxFiles: 30,
+    zippedArchive: true,
+  }),
+  // 모든 레벨 로그를 저장할 파일 설정
+  new winstonDaily({
+    level: 'debug',
+    datePattern: 'YYYY-MM-DD',
+    dirname: logDir,
+    filename: 'portfolio_%DATE%.log',
+    maxFiles: 30,
+    zippedArchive: true,
+  }),
+];
+
+// logger 모듈 생성
+const logger = winston.createLogger({
+  level: level(),
+  levels,
+  format: logFormat,
+  transports,
 });
 
 export default logger;
