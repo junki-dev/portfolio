@@ -1,0 +1,16 @@
+###########################
+# NODE.JS ENVIREMENT FILE
+###########################
+
+# SERVER PORT
+PORT=3000
+
+# LOG LEVEL
+## error / warn / info / http / verbose / debug / silly
+LOG_LEVEL=into
+
+# MONGODB INFO
+USER_ID=portfolioUser
+USER_PWD=portfolioPwd
+DB_HOST=mongodb:27018
+DB_NAME=portfolio
