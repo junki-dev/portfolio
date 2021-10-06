@@ -28,7 +28,7 @@ services:
       - portfolio-network
 
   faucet:
-    image: portfolio:0.13
+    image: portfolio:0.14
     container_name: portfolio
     restart: unless-stopped
     logging:
@@ -42,6 +42,7 @@ services:
     volumes:
       - ./volumes/portfolio/logs:/usr/src/logs
       - ./config/env_portfolio:/usr/src/.env
+      - ./../../frontend/build:/usr/src/public
     ports:
       - 80:3000
     command: npm start

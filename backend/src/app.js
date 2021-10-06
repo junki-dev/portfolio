@@ -23,7 +23,7 @@ mongoose
   .catch(e => logger.error(e));
 
 // 라우팅
-app.use(express.static(`${__dirname}/../../frontend/build`)); // 메인화면
+app.use(express.static(`${__dirname}/public`)); // 메인화면
 app.use('/career', careerRouter); // 경력 관련 routing
 app.use('/skill', skillRouter); // 기술 관련 routing
 
