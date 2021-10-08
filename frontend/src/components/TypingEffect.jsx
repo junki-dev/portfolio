@@ -18,7 +18,7 @@ const TypingEffect = () => {
       <div className="content">
         <div className="typing">
           <TypeWriterEffect
-            onInit={typewriter => {
+            onInit={(typewriter) => {
               typewriter
                 .pauseFor(1000)
                 .typeString('안녕하세요.')

@@ -18,8 +18,8 @@ const Work = () => {
           window.location.href = `/`;
         }
 
-        data.map(newMenu =>
-          setWorkMenu(prevMenu => [
+        data.map((newMenu) =>
+          setWorkMenu((prevMenu) => [
             ...prevMenu,
             {
               id: newMenu.id,
@@ -27,7 +27,7 @@ const Work = () => {
               suffix: newMenu.startDate,
               link: `work/${newMenu.id}`,
             },
-          ]),
+          ])
         );
       })
       .catch(() => {

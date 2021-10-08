@@ -18,14 +18,14 @@ const Skill = () => {
           window.location.href = `/`;
         }
 
-        data.map(newMenu => {
+        data.map((newMenu) => {
           const name = newMenu.name.toLowerCase();
-          return setSkillMenu(prevMenu => [
+          return setSkillMenu((prevMenu) => [
             ...prevMenu,
             {
               id: String(newMenu.name).toLowerCase,
               title: newMenu.name,
-              suffix: newMenu.techStack.map(skill => {
+              suffix: newMenu.techStack.map((skill) => {
                 return `${skill.name}`;
               }),
               link: `skill/${name}`,
