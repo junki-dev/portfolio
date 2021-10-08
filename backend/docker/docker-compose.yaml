@@ -28,7 +28,7 @@ services:
       - portfolio-network
 
   faucet:
-    image: portfolio:0.14
+    image: portfolio:0.1
     container_name: portfolio
     restart: unless-stopped
     logging:

@@ -131,12 +131,12 @@ const DetailTemplate = () => {
           <div>
             <ExperienceList>
               {workData &&
-                workData.experience.map(data => (
+                workData.experience.map((data) => (
                   <li>
                     {data.title}
                     <ul>
                       {!!data.description &&
-                        data.description.map(desc => <li>{desc}</li>)}
+                        data.description.map((desc) => <li>{desc}</li>)}
                     </ul>
                   </li>
                 ))}
@@ -147,7 +147,7 @@ const DetailTemplate = () => {
           <Title>Skills</Title>
           <HR />
           {workData &&
-            workData.skills.map(data => (
+            workData.skills.map((data) => (
               <BasicContent
                 key={data.id}
                 title={data.name}
@@ -160,7 +160,7 @@ const DetailTemplate = () => {
           <TroubleSection>
             <Title>Troubleshooting</Title>
             <HR />
-            {workData.troubleshooting.map(trouble => (
+            {workData.troubleshooting.map((trouble) => (
               <Accordion allowZeroExpanded>
                 <AccordionItem>
                   <AccordionItemHeading>

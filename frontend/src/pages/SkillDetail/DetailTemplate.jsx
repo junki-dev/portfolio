@@ -64,7 +64,7 @@ const DetailTemplate = () => {
 
         <Accordion>
           {!!skillData &&
-            skillData.techStack.map(skill => (
+            skillData.techStack.map((skill) => (
               <AccordionItem>
                 <AccordionItemHeading>
                   <AccordionItemButton>{skill.name}</AccordionItemButton>
