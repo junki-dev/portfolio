@@ -13,6 +13,14 @@ import 'react-accessible-accordion/dist/fancy-example.css';
 import Sidebar from '../../components/Menu/Sidebar';
 import HR from '../../components/HR';
 
+// Component style
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  color: #000;
+`;
+
 // body 영역 style
 const Body = styled.div`
   margin: 5%;
@@ -56,7 +64,7 @@ const DetailTemplate = () => {
   }, []);
 
   return (
-    <div className="home">
+    <Container>
       <Sidebar />
       <Body>
         <BodyTitle>{name}</BodyTitle>
@@ -102,7 +110,7 @@ const DetailTemplate = () => {
           ))}
         </TechStack> */}
       </Body>
-    </div>
+    </Container>
   );
 };
 

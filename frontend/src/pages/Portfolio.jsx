@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import styled from 'styled-components';
 import TypingEffect from '../components/TypingEffect';
 import About from './About';
 import Work from './Work';
@@ -8,16 +7,6 @@ import WorkDetail from './WorkDetail/DetailTemplate';
 import SkillDetail from './SkillDetail/DetailTemplate';
 import Skill from './Skill';
 import Lab from './Lab';
-
-import '../assets/Home.css';
-
-const Home = styled`
-
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-color: #000;
-`;
 
 const Portfolio = () => {
   return (

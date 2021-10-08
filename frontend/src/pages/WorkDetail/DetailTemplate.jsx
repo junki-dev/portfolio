@@ -15,6 +15,14 @@ import HR from '../../components/HR';
 import Info from '../../components/Info/Info';
 import BasicContent from '../../components/Content/BasicContent';
 
+// Component style
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  color: #000;
+`;
+
 // body 영역 style
 const Body = styled.div`
   margin: 5%;
@@ -103,7 +111,7 @@ const DetailTemplate = () => {
   }, []);
 
   return (
-    <div className="home">
+    <Container>
       <Sidebar />
       <Body>
         <BodyHeader title={workData && workData.name} />
@@ -177,7 +185,7 @@ const DetailTemplate = () => {
           </TroubleSection>
         )}
       </Body>
-    </div>
+    </Container>
   );
 };
 

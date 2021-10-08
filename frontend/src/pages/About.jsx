@@ -1,12 +1,18 @@
 import React from 'react';
-// import axios from 'axios';
 import styled from 'styled-components';
-
 import Sidebar from '../components/Menu/Sidebar';
 import BodyHeader from '../components/Header/BodyHeader';
 import HR from '../components/HR';
 import Info from '../components/Info/Info';
 import BasicContent from '../components/Content/BasicContent';
+
+// Component style
+const Section = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  color: #000;
+`;
 
 // body 영역 style
 const Body = styled.div`
@@ -44,29 +50,8 @@ const Experience = styled.div`
 `;
 
 const About = () => {
-  /** axois 예제 */
-  // const [userName, setUserName] = useState();
-
-  // const fetchUserName = async () => {
-  //   console.log(`===========================`);
-  //   const url = 'http://localhost:4500/';
-  //   axios
-  //     .get(url)
-  //     .then(function (response) {
-  //       setUserName(response.data.userName);
-  //       console.log(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(`실패 + ${error}`);
-  //     });
-  // };
-
   return (
-    <div className="home">
-      {/* <p>--------------------------</p>
-      {userName}
-      <input type="submit" onClick={fetchUserName} value="get" />
-      <p>--------------------------</p> */}
+    <Section>
       <Sidebar />
       <Body>
         <BodyHeader
@@ -105,7 +90,7 @@ const About = () => {
           />
         </Experience>
       </Body>
-    </div>
+    </Section>
   );
 };
 
