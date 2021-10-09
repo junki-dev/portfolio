@@ -1,62 +1,76 @@
 import React from 'react';
-import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import 'react-pro-sidebar/dist/css/styles.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
-const MenuContainer = styled(ProSidebar)`
-  width: 23%;
+import 'bootstrap/dist/css/bootstrap.css';
+
+// Menu 영역 style
+const NavSection = styled(Navbar)`
+  width: 25%;
   height: 100vh;
   margin-left: 0px;
   min-width: 3%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border: 1px solid #eeeeee;
 
-  .pro-sidebar-inner {
-    width: 100%;
-    padding-top: 4vh;
-    background-color: #fff;
-    border: 1px solid #eee;
-  }
+  .navbar-nav {
+    flex-direction: column;
+    height: 100%;
+    padding-left: 0.1em;
+    padding-top: 5vh;
+    width; 100%;
+    font-size: 13em;
+    font-family: Komda;
+    
+    .nav-link {
+      height: 20%;
+    }
 
-  .prefix-wrapper {
-    font-size: 2em;
-    font-family: BigShouldersRegular;
-  }
-
-  .pro-inner-item {
-    width: 100%;
-    height: 23vh;
-
-    .pro-item-content {
-      width: 100%;
-      height: 100%;
-      font-size: 8em;
-      font-family: BigShouldersBold;
+    .prefix {
+      font-size: 0.4em; 
     }
   }
 `;
 
+// 메뉴 데이터
+const menus = [
+  {
+    prefix: '01.',
+    title: 'ABOUT',
+    link: '/about',
+  },
+  {
+    prefix: '02.',
+    title: 'WORK',
+    link: '/work',
+  },
+  {
+    prefix: '03.',
+    title: 'SKILL',
+    link: '/skill',
+  },
+  {
+    prefix: '04.',
+    title: 'LAB',
+    link: '/lab',
+  },
+];
+
 const MenuSidebar = () => {
   return (
-    <MenuContainer>
-      <Menu>
-        <MenuItem prefix="01.">
-          ABOUT
-          <Link to="/about" />
-        </MenuItem>
-        <MenuItem prefix="02.">
-          WORK
-          <Link to="/work" />
-        </MenuItem>
-        <MenuItem prefix="03.">
-          SKILL
-          <Link to="/skill" />
-        </MenuItem>
-        <MenuItem prefix="04.">
-          LAB
-          <Link to="/lab" />
-        </MenuItem>
-      </Menu>
-    </MenuContainer>
+    <NavSection>
+      <Nav>
+        {menus.map((menu) => (
+          <Nav.Link as={NavLink} to={menu.link}>
+            <span className="prefix">{menu.prefix}</span>
+            {menu.title}
+          </Nav.Link>
+        ))}
+      </Nav>
+    </NavSection>
   );
 };
 

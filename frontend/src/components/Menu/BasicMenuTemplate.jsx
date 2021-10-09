@@ -1,40 +1,49 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar';
-import 'react-pro-sidebar/dist/css/styles.css';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
 import HR from '../HR';
 
-const Container = styled(ProSidebar)`
-  padding: 4rem;
+import 'react-pro-sidebar/dist/css/styles.css';
+
+// 메뉴 영역 style
+const MenuContainer = styled(ProSidebar)`
+  padding: 6rem 8rem 4rem 8rem;
   width: 70%;
 `;
 
-const MenuContainer = styled(Menu)`
+// 메뉴 내부 영역 style
+const MenuSection = styled(Menu)`
   width: 100%;
   padding-top: 0px !important;
+  background-color: #ffffff;
+  color: #000000;
 
   .pro-inner-item {
-    height: 10vh;
+    height: 14vh;
   }
 
   .pro-item-content {
     height: 100%;
-    font-size: 2.7em;
-    font-family: BigShouldersBold;
-    letter-spacing: -1px;
+    font-size: 7em;
+    font-family: Komda;
+
+    :lang(kor) {
+      font-size: 4.5em;
+      font-family: NanumBarunpen;
+      letter-spacing: -3px;
+    }
   }
 
   .prefix-wrapper {
-    font-size: 1.2em;
-    font-family: BigShouldersBold;
-    letter-spacing: -1px;
+    font-size: 2em;
+    font-family: Komda;
   }
 
   .suffix-wrapper {
-    font-size: 1.2em;
-    font-family: BigShouldersBold;
+    font-size: 3em;
+    font-family: Komda;
     letter-spacing: -1px;
     text-align: end;
     white-space: nowrap;
@@ -45,26 +54,22 @@ const MenuContainer = styled(Menu)`
   }
 `;
 
-const BasicMenuTemplate = ({ menuList }) => {
+const BasicMenuTemplate = ({ lang, menuList }) => {
   return (
-    <Container>
-      <MenuContainer>
+    <MenuContainer>
+      <MenuSection>
         {menuList.map((menu, index) => (
           <>
-            <MenuItem prefix={`${index + 1}.`} suffix={menu.suffix}>
+            <MenuItem lang={lang} prefix={`${index + 1}.`} suffix={menu.suffix}>
               {menu.title}
               <Link to={`${menu.link}`} />
             </MenuItem>
             <HR />
           </>
         ))}
-      </MenuContainer>
-    </Container>
+      </MenuSection>
+    </MenuContainer>
   );
-};
-
-BasicMenuTemplate.propTypes = {
-  menuList: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default BasicMenuTemplate;
