@@ -3,6 +3,15 @@ import axios from 'axios';
 
 import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
 import Sidebar from '../components/Menu/Sidebar';
+import styled from 'styled-components';
+
+// 업무 영역 style
+const WorkSection = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  color: #000;
+`;
 
 const Work = () => {
   /* 경력 메뉴 조회 */
@@ -43,10 +52,10 @@ const Work = () => {
   }, []);
 
   return (
-    <div className="home">
+    <WorkSection>
       <Sidebar />
-      <BasicMenuTemplate menuList={workMenu} />
-    </div>
+      <BasicMenuTemplate lang="kor" menuList={workMenu} />
+    </WorkSection>
   );
 };
 

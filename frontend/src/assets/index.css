@@ -13,23 +13,8 @@ code {
 }
 
 @font-face {
-  font-family: 'Gothic';
-  src: url('../assets/font/NanumGothic-Bold.ttf');
-}
-
-@font-face {
-  font-family: 'NoteSans';
-  src: url('../assets/font/NotoSansKR-Medium.otf');
-}
-
-@font-face {
   font-family: 'BigShouldersBold';
   src: url('../assets/font/BigShouldersStencilDisplay-SemiBold.ttf');
-}
-
-@font-face {
-  font-family: 'BigShouldersRegular';
-  src: url('../assets/font/BigShouldersStencilDisplay-Regular.ttf');
 }
 
 @font-face {
@@ -48,6 +33,15 @@ code {
 }
 
 @font-face {
-  font-family: 'Cafe24SurroundAir';
-  src: url('../assets/font/Cafe24SsurroundAir.ttf');
+  font-family: 'NanumBarunpen';
+  src: url('../assets/font/NanumBarunpenR.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Komda';
+  src: url('../assets/font/Komoda.otf');
+  font-weight: normal;
+  font-style: normal;
 }

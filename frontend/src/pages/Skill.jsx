@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 
 import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
 import Sidebar from '../components/Menu/Sidebar';
+
+// Component style
+const Section = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  color: #000;
+`;
 
 const Skill = () => {
   /* 기술 메뉴 조회 */
@@ -25,9 +34,7 @@ const Skill = () => {
             {
               id: String(newMenu.name).toLowerCase,
               title: newMenu.name,
-              suffix: newMenu.techStack.map((skill) => {
-                return `${skill.name}`;
-              }),
+              suffix: newMenu.list,
               link: `skill/${name}`,
             },
           ]);
@@ -45,10 +52,10 @@ const Skill = () => {
   }, []);
 
   return (
-    <div className="home">
+    <Section>
       <Sidebar />
       <BasicMenuTemplate menuList={skillMenu} />
-    </div>
+    </Section>
   );
 };
 
