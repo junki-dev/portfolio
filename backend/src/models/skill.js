@@ -8,21 +8,25 @@ const TroubleshootingSchema = new Schema({
   content: { type: String, required: true },
 });
 
-// 기술 스택 스키마 정의
-const TeckSchema = new Schema({
+// 기술 상세 스키마 정의
+const SkillDetailSchema = new Schema({
   name: { type: String, required: true },
-  projects: { type: Number, required: false },
-  ability: { type: String, required: true },
-  toubleshooting: { type: [TroubleshootingSchema], required: true },
+  summary: { type: String, required: true },
+});
+
+// 기술 스택 스키마 정의
+const TechSchema = new Schema({
+  type: { type: String, required: true },
+  skills: { type: [SkillDetailSchema], required: true },
 });
 
 // 기술 스키마 정의
 const SkillSchema = new Schema(
   {
     name: { type: String, required: true },
-    teckStack: { type: [TeckSchema], required: false },
+    techStack: { type: [TechSchema], required: false },
   },
-  { collection: `skill` },
+  { collection: `skill` }
 );
 
 // Model 모듈화
