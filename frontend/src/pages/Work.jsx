@@ -5,8 +5,8 @@ import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
 import Sidebar from '../components/Menu/Sidebar';
 import styled from 'styled-components';
 
-// Component style
-const Section = styled.div`
+// 업무 영역 style
+const WorkSection = styled.div`
   display: flex;
   width: 100%;
   margin: 0 auto;
@@ -52,10 +52,10 @@ const Work = () => {
   }, []);
 
   return (
-    <Section>
+    <WorkSection>
       <Sidebar />
-      <BasicMenuTemplate menuList={workMenu} />
-    </Section>
+      <BasicMenuTemplate lang="kor" menuList={workMenu} />
+    </WorkSection>
   );
 };
 
