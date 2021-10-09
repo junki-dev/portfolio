@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import TypingEffect from '../components/TypingEffect';
 import About from './About';
 import Work from './Work';
-import WorkDetail from './WorkDetail/DetailTemplate';
-import SkillDetail from './SkillDetail/DetailTemplate';
+import WorkDetail from './WorkDetail/WorkDetailTemplate';
+import SkillDetail from './SkillDetail/SkillDetailTemplate';
 import Skill from './Skill';
 import Lab from './Lab';
 

@@ -9,24 +9,26 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from 'react-accessible-accordion';
+
 import Sidebar from '../../components/Menu/Sidebar';
-import BodyHeader from '../../components/Header/BodyHeader';
+import PageHeader from '../../components/Header/PageHeader';
 import HR from '../../components/HR';
 import Info from '../../components/Info/Info';
 import BasicContent from '../../components/Content/BasicContent';
 
-// Component style
-const Container = styled.div`
+// Work 상세 영역 style
+const WorkDetailContainer = styled.div`
   display: flex;
   width: 100%;
+  height: 100%
   margin: 0 auto;
   color: #000;
 `;
 
 // body 영역 style
-const Body = styled.div`
-  margin: 5%;
-  width: 60%;
+const WorkDetailSection = styled.div`
+  padding: 5.5rem 8rem 4rem 8rem;
+  width: 70%;
 `;
 
 // 기본 정보 영역 style
@@ -44,7 +46,7 @@ const CommonContainer = styled.div`
 const Title = styled.span`
   letter-spacing: -1px;
   font-size: 1.5vw;
-  font-family: SangSang;
+  font-family: EconomicBold;
 `;
 
 // 소개 내용 style
@@ -73,6 +75,7 @@ const SkillsSection = styled.div`
 // troubleshooting 영역 style
 const TroubleSection = styled.div`
   margin-top: 10%;
+  margin-bottom: 10%;
 
   .span {
     letter-spacing: -1px;
@@ -111,10 +114,10 @@ const DetailTemplate = () => {
   }, []);
 
   return (
-    <Container>
+    <WorkDetailContainer>
       <Sidebar />
-      <Body>
-        <BodyHeader title={workData && workData.name} />
+      <WorkDetailSection>
+        <PageHeader title={workData && workData.name} lang="kor" />
         <HR />
         <InfoContainer>
           <Info title="Role" content={workData && workData.role} />
@@ -184,8 +187,8 @@ const DetailTemplate = () => {
             ))}
           </TroubleSection>
         )}
-      </Body>
-    </Container>
+      </WorkDetailSection>
+    </WorkDetailContainer>
   );
 };
 
