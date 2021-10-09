@@ -41,7 +41,7 @@ const SkillDetailTemplate = () => {
 
   // 기술 데이터 로드
   const loadSkillData = useCallback(() => {
-    const url = `${process.env.REACT_APP_BACKEND_URL}/skill/getSkillByName`;
+    const url = `${process.env.REACT_APP_BACKEND_URL}/bo/skill/getSkillByName`;
     axios
       .get(url, {
         params: {
