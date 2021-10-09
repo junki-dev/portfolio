@@ -28,8 +28,8 @@ mongoose
 
 // 라우팅
 app.use(express.static(`${__dirname}/public`)); // 메인화면
-app.use('/career', careerRouter); // 경력 관련 routing
-app.use('/skill', skillRouter); // 기술 관련 routing
+app.use('/bo/career', careerRouter); // 경력 관련 routing
+app.use('/bo/skill', skillRouter); // 기술 관련 routing
 
 // 서버 구동
 app.listen(port, () => logger.info(`Server listening on port ${port}`));

@@ -18,7 +18,7 @@ const Work = () => {
   const [workMenu, setWorkMenu] = useState([]);
 
   const fetchWorkMenu = useCallback(() => {
-    const url = `${process.env.REACT_APP_BACKEND_URL}/career`;
+    const url = `${process.env.REACT_APP_BACKEND_URL}/bo/career`;
     axios
       .get(url)
       .then(({ data: { resultCode, resultMessage, data } }) => {

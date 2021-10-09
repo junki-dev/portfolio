@@ -18,7 +18,7 @@ const Skill = () => {
   const [skillMenu, setSkillMenu] = useState([]);
 
   const fetchSkillMenu = async () => {
-    const url = `${process.env.REACT_APP_BACKEND_URL}/skill`;
+    const url = `${process.env.REACT_APP_BACKEND_URL}/bo/skill`;
     axios
       .get(url)
       .then(({ data: { resultCode, resultMessage, data } }) => {
