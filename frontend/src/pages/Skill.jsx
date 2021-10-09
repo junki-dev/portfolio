@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+
 import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
 import Sidebar from '../components/Menu/Sidebar';
 
@@ -33,9 +34,7 @@ const Skill = () => {
             {
               id: String(newMenu.name).toLowerCase,
               title: newMenu.name,
-              suffix: newMenu.techStack.map((skill) => {
-                return `${skill.name}`;
-              }),
+              suffix: newMenu.list,
               link: `skill/${name}`,
             },
           ]);
