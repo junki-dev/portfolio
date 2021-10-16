@@ -18,7 +18,6 @@ const resultCode = {
 };
 
 const setResponse = (response, resultCode, data) => {
-  // let resultObj;
   const commonObj = {
     resultCode: resultCode.code,
     resultMessage: resultCode.message,

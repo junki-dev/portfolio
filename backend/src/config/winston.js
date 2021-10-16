@@ -33,22 +33,19 @@ const level = () => {
 // 로그 형식 지정
 const logFormat = combine(
   timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-  printf(info => {
+  printf((info) => {
     if (info.stack) {
       return `${info.timestamp} ${info.level}: ${info.message} \n Error Stack: ${info.stack}`;
     }
     return `${info.timestamp} ${info.level}: ${info.message}`;
-  }),
+  })
 );
 
 // 콘솔에 찍힐 때는 색깔을 구변해서 로깅 수행
 const consoleOpts = {
   handleExceptions: true,
   level: process.env.LOG_LEVEL === 'info' ? 'info' : 'debug',
-  format: combine(
-    colorize({ all: true }),
-    timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-  ),
+  format: combine(colorize({ all: true }), timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' })),
 };
 
 // 로그 설정
