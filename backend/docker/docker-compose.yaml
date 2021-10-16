@@ -42,7 +42,7 @@ services:
     volumes:
       - ./volumes/portfolio/logs:/usr/src/logs
       - ./config/env_portfolio:/usr/src/.env
-      - ./../../frontend/build:/usr/src/public
+      - ./../../frontend/build:/usr/src/build
     ports:
       - 80:3000
     command: npm start
