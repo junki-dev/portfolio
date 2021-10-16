@@ -39,11 +39,14 @@ const Lab = () => {
     <LabContiner>
       <Sidebar />
       <LabSection>
-        <Title>Laboratory _ Comming soon...</Title>
+        <Title>
+          Laboratory <br />
+          &nbsp;&nbsp; Comming soon...
+        </Title>
         <br />
         <Description>
-          알고 있는 것을 더 섬세하고 세련되게, 모르는 것은 경험을 통해 배우기
-          위한 곳입니다.
+          &nbsp;&nbsp;알고 있는 것을 더 섬세하고 세련되게, <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;모르는 것은 경험을 통해 배우기 위한 곳입니다.
         </Description>
         <br />
       </LabSection>
