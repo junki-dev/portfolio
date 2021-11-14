@@ -50,7 +50,7 @@ const CommonSection = styled.div`
   margin-top: 10%;
 `;
 
-// 연락 내용 style
+// 연락 내용 styleㄷ
 const ContactContent = styled.p`
   font-size: 1vw;
   font-family: EconomicBold;
@@ -77,27 +77,25 @@ const About = () => {
             <IntroductionContent>
               <br />
               <h4>
-                <strong>
-                  고공공! (고민하고&nbsp;&nbsp;공부하고&nbsp;&nbsp;공유하자!)
-                </strong>
+                <strong>학습하고 도전하자</strong>
               </h4>
-              Node.js와 Java를 주로 사용하고 간결한 문법의 Go 언어를 좋아합니다.
+              저는 Backend와 Blockchain 개발을 주로 하며 Frontend 개발을
+              재미있어합니다.
               <br />
               <br />
-              프로젝트 중에는 가독성과 자동화 등의 운영을 고려한 개발을
-              중요시하고, 새로 도입 가능한 기술을 찾고 학습하고 동료들과
-              공유합니다. 그리고 코드리뷰를 통해 제가 고민한것들을 보여주고,
-              다른 사람의 스타일과 노력을 경험하여 세련된 코드를 작성하기 위해
-              노력합니다.
+              <strong>Backend</strong> 개발로 간결하고 개발이 용이한 Node.js를
+              주로 사용하고 Nest.js, Apollo 등을 도입해 Node.js를 더 잘 사용하기
+              위한 꾸준한 학습과 도전을 합니다. <br />
+              <strong>Blockchain</strong>의 투명성과 안정성 그리고 탈중앙화라는
+              특성에 매력을 느껴 Blockchain 전문 기업에 근무를 하고 있습니다.
+              Hyperledger Fabric을 사용한 시스템 구축과 운영 경험이 있습니다.
+              구축 시에는 블록 생성주기, Endorsement policy 설정 들을 최적화
+              시켜 성능을 높이고, Shell Script 개발로 배포 자동화를 통해 개발 및
+              운영효율을 높이기 위한 노력을 합니다.
               <br />
-              <br />
-              저는 Backend 개발자로서 안정적이고, 효율성 높은 시스템 그리고
-              장애가 발생해도 빠르게 대처 가능한 시스템으로 만들기 위해 노력하고
-              이러한 노력들이 성과로 나타났을 때 굉장한 성취감을 느낍니다.
-              그리고 Backend 개발자이지만 Frontend, Blockchain 등 다른 기술에
-              관심을 갖고 경험해보고 싶은 욕심이 있습니다. 이런 다양한 기술에
-              대한 경험이 시스템을 안정적이고 효율적으로 만드는데 굉장한 도움이
-              되고 많은 선택지를 제공한다고 생각하기 때문입니다.
+              <strong>Frontend</strong>는 React.js를 사용해 개발합니다. 프로젝트
+              중에 Frontend 개발을 할 수 있는 기회가 생기면 망설임 없이 도전해서
+              프로젝트를 수행하며, 사용자와 직접 맞닿아 있기에 더 재미있습니다.
             </IntroductionContent>
           </div>
         </Introduction>

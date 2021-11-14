@@ -12,11 +12,11 @@ http://junki-kim.com/
   - JavaScript(ES6)
   - Node.js_v14.18.0
   - Express_v4.17.1
-  - MongoDB_v4.2
 - Frontend
   - JavaScript(ES6)
   - React
 - DevOps
+  - MongoDB_v4.2
   - AWS(EC2)
   - Docker_v20.10.8
   - Docker-compose_v2.0.0
