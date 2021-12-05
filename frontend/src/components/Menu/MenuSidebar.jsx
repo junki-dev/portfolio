@@ -30,7 +30,7 @@ const NavSection = styled(Navbar)`
     }
 
     .prefix {
-      font-size: 0.4em; 
+      font-size: 200px; 
     }
   }
 `;
