@@ -23,7 +23,7 @@ const AccordionContent = styled(AccordionItemPanel)`
 const BasicAccordion = ({ tech }) => (
   <Accordion allowZeroExpanded>
     {tech.skills.map((skill) => (
-      <AccordionItem>
+      <AccordionItem key={skill.name}>
         <AccordionHeader>
           <AccordionItemButton>{skill.name}</AccordionItemButton>
         </AccordionHeader>

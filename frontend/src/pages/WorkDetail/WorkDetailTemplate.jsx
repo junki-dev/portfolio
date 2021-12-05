@@ -10,7 +10,6 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 
-import Sidebar from '../../components/Menu/Sidebar';
 import PageHeader from '../../components/Header/PageHeader';
 import HR from '../../components/HR';
 import Info from '../../components/Info/Info';
@@ -115,7 +114,6 @@ const DetailTemplate = () => {
 
   return (
     <WorkDetailContainer>
-      <Sidebar />
       <WorkDetailSection>
         <PageHeader title={workData && workData.name} lang="kor" />
         <HR />
@@ -143,11 +141,13 @@ const DetailTemplate = () => {
             <ExperienceList>
               {workData &&
                 workData.experience.map((data) => (
-                  <li>
+                  <li key={data.title}>
                     {data.title}
                     <ul>
                       {!!data.description &&
-                        data.description.map((desc) => <li>{desc}</li>)}
+                        data.description.map((desc) => (
+                          <li key={data.title}>{desc}</li>
+                        ))}
                     </ul>
                   </li>
                 ))}
@@ -172,7 +172,7 @@ const DetailTemplate = () => {
             <Title>Troubleshooting</Title>
             <HR />
             {workData.troubleshooting.map((trouble) => (
-              <Accordion allowZeroExpanded>
+              <Accordion allowZeroExpanded key={trouble.title}>
                 <AccordionItem>
                   <AccordionItemHeading>
                     <AccordionItemButton>{trouble.title}</AccordionItemButton>

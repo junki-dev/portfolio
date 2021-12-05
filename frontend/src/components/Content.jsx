@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-
-import HR from './HR';
 
 const Container = styled.div`
   width: 100%;
@@ -45,12 +42,6 @@ const Content = ({ title, subTitle, content }) => {
       </Container>
     </>
   );
-};
-
-Content.propTypes = {
-  title: PropTypes.string.isRequired,
-  subTitle: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
 };
 
 export default Content;

@@ -3,7 +3,6 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 
-import Sidebar from '../../components/Menu/Sidebar';
 import HR from '../../components/HR';
 import PageHeader from '../../components/Header/PageHeader';
 import BasicAccordionItem from '../../components/Accordion/BasicAccordionItem';
@@ -70,13 +69,12 @@ const SkillDetailTemplate = () => {
 
   return (
     <SkillContainer>
-      <Sidebar />
       <SkillSection>
         <PageHeader title={pascalName} />
         <HR />
         {!!skillData &&
           skillData.map((tech) => (
-            <AccordionContainer>
+            <AccordionContainer key={tech.type}>
               {tech.type && <Title>{tech.type}</Title>}
               <BasicAccordionItem tech={tech} />
             </AccordionContainer>
