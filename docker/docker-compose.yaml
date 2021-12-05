@@ -28,7 +28,7 @@ services:
       - portfolio-network
 
   portfolio:
-    image: portfolio:0.42
+    image: portfolio:0.5
     container_name: portfolio
     restart: unless-stopped
     logging:
@@ -36,6 +36,8 @@ services:
       options:
         max-size: "200k"
         max-file: "5"
+    env_file:
+      - .env.portfolio
     environment:
       TZ: "Asia/Seoul"
     volumes:
