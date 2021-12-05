@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Sidebar from '../components/Menu/Sidebar';
 import PageHeader from '../components/Header/PageHeader';
 import HR from '../components/HR';
 import Info from '../components/Info/Info';
@@ -59,7 +58,6 @@ const ContactContent = styled.p`
 const About = () => {
   return (
     <AboutContainer>
-      <Sidebar />
       <AboutSection>
         <PageHeader
           title="I AM KIM JUNKI"

@@ -64,7 +64,7 @@ const MenuSidebar = () => {
     <NavSection>
       <Nav>
         {menus.map((menu) => (
-          <Nav.Link as={NavLink} to={menu.link}>
+          <Nav.Link as={NavLink} to={menu.link} key={menu.title}>
             <span className="prefix">{menu.prefix}</span>
             {menu.title}
           </Nav.Link>

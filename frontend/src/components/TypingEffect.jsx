@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TypeWriterEffect from 'typewriter-effect';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 // typingEffect 컨테이너 style
@@ -57,7 +57,7 @@ const TypingEffect = () => {
                 .start();
             }}
           />
-          {redirect && <Redirect to="/about" />}
+          {redirect && <Navigate to="/about" />}
         </TypingEffectionContent>
       </TypingEffectionSection>
     </TypingEffectionContainer>

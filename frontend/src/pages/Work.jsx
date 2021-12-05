@@ -1,9 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
+import styled from 'styled-components';
 import axios from 'axios';
 
 import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
-import Sidebar from '../components/Menu/Sidebar';
-import styled from 'styled-components';
 
 // 업무 영역 style
 const WorkSection = styled.div`
@@ -53,7 +52,6 @@ const Work = () => {
 
   return (
     <WorkSection>
-      <Sidebar />
       <BasicMenuTemplate lang="kor" menuList={workMenu} />
     </WorkSection>
   );
