@@ -1,21 +1,26 @@
 {
   "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
-      "ecmaVersion": 7,
-      "sourceType": "module",
-      "ecmaFeatures": {
-          "jsx": true
-      }
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "env": {
-      "browser": true,
-      "node": true, 
-      "commonjs": true, 
-      "es2021": true
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es2021": true
   },
   "ignorePatterns": ["node_modules/"],
   "rules": {
-      "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/prop-types": 0
   }
 }
