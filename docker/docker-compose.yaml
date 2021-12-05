@@ -27,7 +27,7 @@ services:
     networks:
       - portfolio-network
 
-  faucet:
+  portfolio:
     image: portfolio:0.42
     container_name: portfolio
     restart: unless-stopped
@@ -37,12 +37,10 @@ services:
         max-size: "200k"
         max-file: "5"
     environment:
-      MONGO_URI: "mongodb://mongodb:27017/portfolio"
       TZ: "Asia/Seoul"
     volumes:
       - ./volumes/portfolio/logs:/usr/src/logs
-      - ./config/env_portfolio:/usr/src/.env
-      - ./../../frontend/build:/usr/src/build
+      - ./../frontend/build:/usr/src/build
     ports:
       - 80:3000
     command: npm start
