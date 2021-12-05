@@ -35,7 +35,7 @@ const Skill = () => {
               id: String(newMenu.name).toLowerCase,
               title: newMenu.name,
               suffix: newMenu.list,
-              link: `skill/${name}`,
+              link: `${name}`,
             },
           ]);
         });
