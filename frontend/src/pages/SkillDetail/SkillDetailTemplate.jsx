@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import HR from '../../components/HR';
 import PageHeader from '../../components/Header/PageHeader';
 import BasicAccordionItem from '../../components/Accordion/BasicAccordionItem';
+import Sidebar from '../../components/Menu/Sidebar';
 
 // Skill 페이지 컨테이너 style
 const SkillContainer = styled.div`
@@ -69,6 +70,7 @@ const SkillDetailTemplate = () => {
 
   return (
     <SkillContainer>
+      <Sidebar />
       <SkillSection>
         <PageHeader title={pascalName} />
         <HR />

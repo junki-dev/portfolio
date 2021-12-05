@@ -1,12 +1,12 @@
 import React from 'react';
 import Router from '../router/Router';
-import Sidebar from './Menu/Sidebar';
 
-const MainLayout = () => (
-  <>
-    <Sidebar />
-    <Router />
-  </>
-);
+const MainLayout = () => {
+  return (
+    <>
+      <Router />
+    </>
+  );
+};
 
 export default MainLayout;
