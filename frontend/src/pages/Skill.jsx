@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 import BasicMenuTemplate from '../components/Menu/BasicMenuTemplate';
+import Sidebar from '../components/Menu/Sidebar';
 
 // Component style
 const Section = styled.div`
@@ -52,6 +53,7 @@ const Skill = () => {
 
   return (
     <Section>
+      <Sidebar />
       <BasicMenuTemplate menuList={skillMenu} />
     </Section>
   );

@@ -28,6 +28,7 @@ const TypingEffect = () => {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
+    console.log(`effect 됨?`);
     setTimeout(() => {
       setRedirect(true);
     }, 15000);

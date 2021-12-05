@@ -5,6 +5,7 @@ import PageHeader from '../components/Header/PageHeader';
 import HR from '../components/HR';
 import Info from '../components/Info/Info';
 import BasicContent from '../components/Content/BasicContent';
+import Sidebar from '../components/Menu/Sidebar';
 
 // About 페이지 컨테이너 style
 const AboutContainer = styled.div`
@@ -58,6 +59,7 @@ const ContactContent = styled.p`
 const About = () => {
   return (
     <AboutContainer>
+      <Sidebar />
       <AboutSection>
         <PageHeader
           title="I AM KIM JUNKI"

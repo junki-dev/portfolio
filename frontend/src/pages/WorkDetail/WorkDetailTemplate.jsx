@@ -14,6 +14,7 @@ import PageHeader from '../../components/Header/PageHeader';
 import HR from '../../components/HR';
 import Info from '../../components/Info/Info';
 import BasicContent from '../../components/Content/BasicContent';
+import Sidebar from '../../components/Menu/Sidebar';
 
 // Work 상세 영역 style
 const WorkDetailContainer = styled.div`
@@ -114,6 +115,7 @@ const DetailTemplate = () => {
 
   return (
     <WorkDetailContainer>
+      <Sidebar />
       <WorkDetailSection>
         <PageHeader title={workData && workData.name} lang="kor" />
         <HR />
