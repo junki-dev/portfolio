@@ -2,7 +2,7 @@
 ## docker build . -t portfolio:1.0
 
 # base 이미지 설정
-FROM node:14.18.0
+FROM node:16.13.0
 
 # 앱 디렉터리 생성
 WORKDIR /usr/src

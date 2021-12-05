@@ -34,7 +34,7 @@ const Work = () => {
               id: newMenu.id,
               title: newMenu.title,
               suffix: newMenu.startDate,
-              link: `work/${newMenu.id}`,
+              link: `${newMenu.id}`,
             },
           ])
         );
@@ -45,7 +45,6 @@ const Work = () => {
   }, [workMenu]);
 
   useEffect(() => {
-    console.log(workMenu);
     if (workMenu.length < 1) {
       fetchWorkMenu();
     }
