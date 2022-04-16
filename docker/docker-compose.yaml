@@ -4,9 +4,9 @@ networks:
   portfolio-network:
 
 services:
-  mongodb:
-    image: mongo:4.2-bionic
-    container_name: mongodb
+  portfolio_db:
+    image: mongo:5.0.7
+    container_name: portfolio_db
     restart: unless-stopped
     logging:
       driver: json-file
@@ -14,13 +14,13 @@ services:
         max-size: "200k"
         max-file: "5"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: portfolioUser
-      MONGO_INITDB_ROOT_PASSWORD: portfolioPwd
+      MONGO_INITDB_ROOT_USERNAME: jerome
+      MONGO_INITDB_ROOT_PASSWORD: Jerome!@34
       MONGO_INITDB_DATABASE: portfolio
       TZ: "Asia/Seoul"
     volumes:
-      - ./volumes/mongodb/data:/data/db
-      - ./volumes/mongodb/log:/var/log/mongodb/
+      - ./volumes/portfolio_db/data:/data/db
+      - ./volumes/portfolio_db/log:/var/log/mongodb/
     ports:
       - 27017:27017
     command: mongod
