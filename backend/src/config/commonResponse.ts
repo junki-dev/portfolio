@@ -17,7 +17,7 @@ const resultCode = {
   },
 };
 
-const setResponse = (response, resultCode, data) => {
+const setResponse = (response: any, resultCode: any, data: any) => {
   const commonObj = {
     resultCode: resultCode.code,
     resultMessage: resultCode.message,

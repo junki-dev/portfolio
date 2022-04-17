@@ -1,18 +1,16 @@
 import express from 'express'; // 웹어플리케이션 개발을 위한 패키지
-import mongoose from 'mongoose'; // mongodb 연결을 위한 패키지지
 import path from 'path'; // 파일과 Directory 경로 작업을 위한 패키지
 import cors from 'cors'; // cors에러를 위한 패키지
 import dotenv from 'dotenv'; // 환경변수를 파일에 저장하기 위한 패키지
-
-import logger from './config/winston.js'; // winston 로그 설정
-import careerRouter from './router/career/index.js'; // career 라우터
-import skillRouter from './router/skill/index.js'; // career 라우터
-import { dbConnect } from './util/mongooseUtil.js'; // mongodb 유틸
+import logger from '@src/config/logger'; // winston 로그 설정
+import careerRouter from '@src/api/routes/career/index'; // career 라우터
+import skillRouter from '@src/api/routes/skill/index'; // career 라우터
+import { dbConnect } from '@src/loaders/connect/database'; // mongodb 유틸
 
 logger.debug(`# JUNKI PORTFOLIO BACKEND SERVER STARTing...`);
 
 dotenv.config(); // 환경변수 적용
-const __dirname = path.resolve(); // 디렉토리의 절대경로를 반환
+// const __dirname = path.resolve(); // 디렉토리의 절대경로를 반환
 const port = process.env.PORT; // 서버 포트 지정
 
 /* middleware 설정 */
