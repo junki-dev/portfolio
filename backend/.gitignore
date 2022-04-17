@@ -3,6 +3,8 @@ node_modules
 
 # 로그 파일
 logs
+*.log
 
 # 빌드 파일
 build
+dist
