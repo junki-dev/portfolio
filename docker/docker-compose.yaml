@@ -15,7 +15,7 @@ services:
         max-file: "5"
     environment:
       MONGO_INITDB_ROOT_USERNAME: jerome
-      MONGO_INITDB_ROOT_PASSWORD: Jerome!@34
+      MONGO_INITDB_ROOT_PASSWORD: Jerome!23
       MONGO_INITDB_DATABASE: portfolio
       TZ: "Asia/Seoul"
     volumes:
