@@ -1,5 +1,5 @@
 import express from 'express';
-import careerController from '@src/controller/career/careerController';
+import careerController from '@src/components/career/careerController';
 
 const careerRouter = express.Router();
 

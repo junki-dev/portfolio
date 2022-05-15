@@ -1,5 +1,5 @@
 import express from 'express';
-import skillController from '@src/controller/skill/skillController';
+import skillController from '@src/components/skill/skillController';
 
 const skillRouter = express.Router();
 
