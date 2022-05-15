@@ -4,7 +4,7 @@
   "description": "# 개요",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start ts-node -- --type-check -r tsconfig-paths/register dist/src/app.js",
+    "start": "ts-node -- --type-check -r tsconfig-paths/register dist/src/app.js",
     "build": "tsc -p .",
     "dev": "nodemon --exec node --loader ts-node/esm -r tsconfig-paths/register src/app.ts"
   },

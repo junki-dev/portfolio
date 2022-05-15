@@ -3,8 +3,8 @@ import path from 'path'; // 파일과 Directory 경로 작업을 위한 패키�
 import cors from 'cors'; // cors에러를 위한 패키지
 import dotenv from 'dotenv'; // 환경변수를 파일에 저장하기 위한 패키지
 import logger from '@src/config/logger'; // winston 로그 설정
-import careerRouter from '@src/api/routes/career/index'; // career 라우터
-import skillRouter from '@src/api/routes/skill/index'; // career 라우터
+import careerRouter from '@src/components/career/careerApi'; // career 라우터
+import skillRouter from '@src/components/skill/skillApi'; // career 라우터
 import { dbConnect } from '@src/loaders/connect/database'; // mongodb 유틸
 
 logger.debug(`# JUNKI PORTFOLIO BACKEND SERVER STARTing...`);

@@ -1,6 +1,6 @@
 import { setResponse, resultCode } from '@src/config/commonResponse';
 import logger from '@src/config/logger';
-import Skill from '@src/models/skill';
+import Skill from '@src/components/skill/skill';
 
 // 기술 스택 메뉴 목록 조회
 const getSkillMenuList = async (req: any, res: any) => {

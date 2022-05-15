@@ -1,6 +1,6 @@
 import { resultCode, setResponse } from '@src/config/commonResponse';
 import logger from '@src/config/logger';
-import Career from '@src/models/career';
+import Career from '@src/components/career/career';
 
 // 경력 목록 조회
 const getCareerList = (req: any, res: any) => {
